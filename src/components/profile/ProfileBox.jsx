@@ -32,7 +32,7 @@ function ProfileSidebar({user}) {
                 {user.name}
             </h1>
 
-            <p className='text-lg font-extralight'>
+            <p className='text-lg font-extralight  truncate'>
                 {user.email}
             </p>
 

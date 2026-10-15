@@ -4,11 +4,12 @@ import axios from "axios";
 import { deleteSession, getSession, setSession } from "../_lib/session";
 import { createUser, getUserById, updateUser } from '../api/users';
 import { redirect } from "next/navigation";
+import { error } from "console";
 
 const API_URL = "https://shopease-api-q3o2.onrender.com";
 
 // Login action
-export const loginAction = async (formData) => {
+export const loginAction = async (prevstate, formData) => {
     try {
         // const email = formData.get("email");
         // const password = formData.get("password");
@@ -26,7 +27,9 @@ export const loginAction = async (formData) => {
         console.log("user: ", user);
 
         if (!user) {
-            throw new Error("Invalid Credentials");   // throw ke niche ka code nahi chalta matlab ye code chalne par niche ka code nahi chalega 
+            return {
+                error: "Invalid Credential"
+            };   // throw ke niche ka code nahi chalta matlab ye code chalne par niche ka code nahi chalega 
         }     
 
         await setSession(
@@ -38,8 +41,16 @@ export const loginAction = async (formData) => {
         )
 
     } catch (error) {
-        console.log("Error: ", error);        
-        throw error;
+        // if(error.response?.status === 404) {
+        //     return {
+        //         error: "Invalid Credential"
+        //     }      
+        // }
+        // console.log("Login error: ", error.message);
+        
+        // return {
+        //     error: "Something went wrong. Please try again."
+        // }
     }
 
     redirect("/");

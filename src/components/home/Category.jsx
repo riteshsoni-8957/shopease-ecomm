@@ -12,7 +12,7 @@ async function Category() {
         Shop By Category
       </h1>
       
-      <div className='flex flex-wrap gap-8 sm:ml-8'>
+      <div className='grid grid-cols-2 min-[390px]:grid-cols-3 min-[490px]:grid-cols-4 min-[590px]:grid-cols-5 min-[720px]:grid-cols-6 md:grid-cols-4 lg:grid-cols-7 2xl:grid-cols-9 text-center gap-8 sm:ml-8'>
         {
           categories.map((category) => (
             <div key={category.id} className=''>
