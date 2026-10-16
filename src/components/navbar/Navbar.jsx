@@ -10,7 +10,7 @@ async function Navbar() {
     const user = session ? await getUserById(session.id) : "";   //this user by session id
     console.log("user: ", user)
 
-    if(session && !user) {
+    if(!user) {
         await deleteSession();
     }
 
