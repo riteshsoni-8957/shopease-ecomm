@@ -20,9 +20,9 @@ async function page() {
   const products = await getProducts();   //All products
   console.log("All products: ", products);
 
-    // if(session && !user) {
-    //     await deleteSession();
-    // }
+    if(session && !user) {
+        await deleteSession();
+    }
 
   return (
     <div className='w-full h-screen '>
