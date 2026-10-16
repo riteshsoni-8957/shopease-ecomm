@@ -27,9 +27,9 @@ async function page({params}) {
     console.log("All Products: ", products);
     console.log("product by pId: ", product);
 
-    // if(session && !user) {
-    //     await deleteSession();
-    // }
+    if(session && !user) {
+        await deleteSession();
+    }
 
     return (
         <div>
