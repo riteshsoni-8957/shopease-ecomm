@@ -14,7 +14,6 @@ export const getUsers = async () => {
 
 // return user by id
 export const getUserById = async (id) => {
-<<<<<<< HEAD
     try {
         const url = `${API_URL}/users/${id}`;
         const response = await axios.get(url);
@@ -27,37 +26,6 @@ export const getUserById = async (id) => {
         }
 
         // Baaki errors ko aage bhejo
-=======
-    const url = `${API_URL}/users/${id}`;
-
-    try {
-        console.log("URL:", url);
-        console.log("User ID:", id);
-
-        const response = await axios.get(url);
-
-        console.log("User Data:", response.data);
-
-        // Check if user exists
-        if (
-            !response.data ||
-            typeof response.data !== "object" ||
-            Object.keys(response.data).length === 0
-        ) {
-            return null;
-        }
-
-        return response.data;
-
-    } catch (error) {
-        console.error("Error fetching user:", error.message);
-
-        // User not found (404)
-        if (error.response?.status === 404) {
-            return null;
-        }
-
->>>>>>> 6dc72bc741c9ef04b8e6155adc09051681f63529
         throw error;
     }
 };
