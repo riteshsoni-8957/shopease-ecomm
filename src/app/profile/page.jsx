@@ -4,6 +4,7 @@ import { deleteSession, getSession } from '../../_lib/session';
 import { getUserById } from '../../api/users';
 import ProfilePage from '../../components/profile/ProfilePage';
 import Navbar from '../../components/navbar/Navbar';
+// import DeleteInvalidSession from "../../components/DeleteInvalidSession";
 
 export const metadata = {
 
@@ -16,9 +17,9 @@ async function page() {
     const session = await getSession();
     const user = session ? await getUserById(session.id) : "";
 
-    if(session && !user) {
-        await deleteSession();
-    }
+    // if(session && !user) {
+    //     return <DeleteInvalidSession />;
+    // }
 
     return (
         <div className='w-full h-screen '>

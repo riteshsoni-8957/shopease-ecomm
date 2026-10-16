@@ -5,6 +5,7 @@ import { getProducts } from '../../api/products';
 import Navbar from '../../components/navbar/Navbar';
 import ProductPage from '../../components/shopRouter/productPage';
 import { getUserById } from '../../api/users';
+// import DeleteInvalidSession from "../../components/DeleteInvalidSession";
 
 export const metadata = {
 
@@ -20,9 +21,9 @@ async function page() {
   const products = await getProducts();   //All products
   console.log("All products: ", products);
 
-    if(session && !user) {
-        await deleteSession();
-    }
+    // if(session && !user) {
+    //     return <DeleteInvalidSession />;
+    // }
 
   return (
     <div className='w-full h-screen '>

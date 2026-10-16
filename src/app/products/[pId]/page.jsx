@@ -6,6 +6,7 @@ import { getProductById, getProducts } from "../../../api/products";
 import { deleteSession, getSession } from "../../../_lib/session";
 import { getUserById } from "../../../api/users";
 import Link from "next/link";
+// import DeleteInvalidSession from "../../../components/DeleteInvalidSession";
 
 export const metadata = {
 
@@ -27,9 +28,9 @@ async function page({params}) {
     console.log("All Products: ", products);
     console.log("product by pId: ", product);
 
-    if(session && !user) {
-        await deleteSession();
-    }
+    // if(session && !user) {
+    //     return <DeleteInvalidSession />;
+    // }
 
     return (
         <div>
