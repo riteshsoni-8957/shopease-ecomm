@@ -11,13 +11,7 @@ async function Navbar() {
     console.log("user: ", user)
 
     if(session && !user) {
-        try {
-           await deleteSession()
-        } catch (error) {
-           console.log("Error: ", error);     
-           throw error;
-        }
-       redirect("/")
+        await deleteSession()
     }
 
     return (
