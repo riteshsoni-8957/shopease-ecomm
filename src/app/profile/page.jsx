@@ -16,9 +16,9 @@ async function page() {
     const session = await getSession();
     const user = session ? await getUserById(session.id) : "";
 
-    // if(session && !user) {
-    //     await deleteSession();
-    // }
+    if(session && !user) {
+        await deleteSession();
+    }
 
     return (
         <div className='w-full h-screen '>

@@ -14,9 +14,9 @@ async function page() {
     const categories = await getCategories();
     console.log("categories: ", categories);
 
-    // if(session && !user) {
-    //     await deleteSession();
-    // }
+    if(session && !user) {
+        await deleteSession();
+    }
 
     return (
         <div className='w-full h-screen '>

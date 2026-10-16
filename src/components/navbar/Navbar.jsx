@@ -8,6 +8,7 @@ async function Navbar() {
 
     let user = null;
 
+<<<<<<< HEAD
     if (session?.id) {
         user = await getUserById(session.id);
     }
@@ -15,6 +16,10 @@ async function Navbar() {
     // Session hai, lekin user nahi mila
     if (session && !user) {
         return <DeleteInvalidSession />;
+=======
+    if(session && !user) {
+        await deleteSession()
+>>>>>>> 6dc72bc741c9ef04b8e6155adc09051681f63529
     }
 
     return (
@@ -27,4 +32,8 @@ async function Navbar() {
     );
 }
 
+<<<<<<< HEAD
 export default Navbar;
+=======
+export default Navbar
+>>>>>>> 6dc72bc741c9ef04b8e6155adc09051681f63529
