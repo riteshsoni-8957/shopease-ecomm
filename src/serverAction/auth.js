@@ -95,8 +95,9 @@ export const registerAction = async (formData) => {
 
     const existingUser = users.find((user) => user.email === formData.get("email"));
     if(existingUser) {
-        console.log("existing user: ", existingUser);
-        throw new Error("Your Email Id is Already Registerd! ")   // throw ke niche ka code nahi chalta matlab ye code chalne par niche ka code nahi chalega 
+        return {
+            error: "Yorr email id is already registerdd!"      
+        }
     }
 
     try {

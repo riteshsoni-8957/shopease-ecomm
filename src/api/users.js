@@ -14,15 +14,21 @@ export const getUsers = async () => {
 
 // return user by id
 export const getUserById = async (id) => {
-    const url = `${API_URL}/users/${id}`;
-    const response = await axios.get(url);
+    try {
+        const url = `${API_URL}/users/${id}`;
+        const response = await axios.get(url);
 
-    return response.data;
+        return response.data;
+    } catch (error) {
+        // User API mein nahi mila
+        if (error.response?.status === 404) {
+            return null;
+        }
 
-    console.log("URL:", url);
-    console.log("User ID:", id);
-    console.log("Final URL:", url);
-}
+        // Baaki errors ko aage bhejo
+        throw error;
+    }
+};
 
 // create user
 export const createUser = async (newUser) => {

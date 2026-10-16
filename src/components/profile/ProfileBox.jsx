@@ -13,7 +13,7 @@ function ProfileSidebar({user}) {
             <div className='w-full flex items-center justify-center space-x-6 bg-blue-400 py-4 rounded-t-2xl'>
                 <img
                     src={isAvatar ? user.avatar : "https://img.magnific.com/free-vector/user-circles-set_78370-4704.jpg"}
-                    alt={user.name}
+                    alt={user?.name}
                     className="w-15 h-15 rounded-[50%] border-3 border-gray-50"
                 />
 
@@ -29,11 +29,11 @@ function ProfileSidebar({user}) {
             </div>
 
             <h1 className='text-xl font-semibold font-serif mt-4'>
-                {user.name}
+                {user?.name}
             </h1>
 
             <p className='text-lg font-extralight  truncate'>
-                {user.email}
+                {user?.email}
             </p>
 
             <Link href="/profile">
