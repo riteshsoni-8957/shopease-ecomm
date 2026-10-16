@@ -37,7 +37,7 @@ function ProductPage({ user, products }) {
     return (
         <div>
             {/* Product Header bg*/}
-            <div className='relative flex flex-col shop-image-bg bg-cover bg-center text-white px-5 min-[400px]:px-10 min-[500px]:px-15 sm:px-20 md:px-30 py-10 gap-3'>
+            <div className='fixed top-18 right-0 left-0 flex flex-col shop-image-bg bg-cover bg-center text-white px-5 min-[400px]:px-10 min-[500px]:px-15 sm:px-20 md:px-30 py-10 gap-3'>
                 <h1 className='text-2xl sm:text-3xl md:text-4xl font-bold font-serif'>
                     {checkedCategory.length === 1 ? `Shop ${checkedCategory} Products` : checkedCategory.length === 0 || checkedCategory.length === categories.length ? "Shop All Products" : "Shop Products"}
                 </h1>

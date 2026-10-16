@@ -1,5 +1,5 @@
 // it is server side routing
-import Login from '../../../components/auth/Login'
+import Login from '../../../components/auth/Login';
 
 export const metadata = {
 

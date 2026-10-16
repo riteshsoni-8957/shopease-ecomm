@@ -46,6 +46,8 @@ function ContactForm() {
                 <input 
                     type="tel"
                     id='phone'
+                    minLength={10}
+                    maxLength={10}
                     required
                     className='border-b-2 border-bs-gray-900 outline-none px-2 pb-1 ' 
                 />

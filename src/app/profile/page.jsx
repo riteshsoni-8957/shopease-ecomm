@@ -1,6 +1,6 @@
 // it is server side routing
 import Link from 'next/link';
-import { getSession } from '../../_lib/session';
+import { deleteSession, getSession } from '../../_lib/session';
 import { getUserById } from '../../api/users';
 import ProfilePage from '../../components/profile/ProfilePage';
 import Navbar from '../../components/navbar/Navbar';
@@ -15,6 +15,10 @@ async function page() {
 
     const session = await getSession();
     const user = session ? await getUserById(session.id) : "";
+
+    // if(session && !user) {
+    //     await deleteSession();
+    // }
 
     return (
         <div className='w-full h-screen '>

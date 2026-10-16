@@ -20,7 +20,7 @@ async function FeaturedProducts() {
                 <div className='w-full p-3 rounded-2xl overflow-hidden bg-amber-50 shadow-xl hover:scale-105 transition duration-300 '>
                   <img 
                     src={product.images[0]} 
-                    alt={product.subCategory} 
+                    alt={product.subcategory} 
                     className='w-full h-[240px] min-[400px]:h-[280px] min-[580px]:h-[350px] sm:h-[240px] object-top object-cover rounded-t-2xl mb-6'
                   />
                   <h1 className='ml-4 text-xl font-semibold mb-2'>

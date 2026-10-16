@@ -12,14 +12,16 @@ export default function Home() {
   return (
     <div className="flex flex-col ">
       <Navbar />
-
-      <Hero />
-      <Category />
-      <FeaturedProducts />
-      <NewArrivals />
-      <WhyChooseUs />
-      <Testimonials />
-      <NewsLetter />
+      
+      <main>
+        <Hero />
+        <Category />
+        <FeaturedProducts />
+        <NewArrivals />
+        <WhyChooseUs />
+        <Testimonials />
+        <NewsLetter />        
+      </main>
 
       <Footer />
     </div>

@@ -7,7 +7,11 @@ function page() {
   return (
     <div className='w-full h-screen'>
       <Navbar />
-      <ContactPage />
+
+      <main>
+       <ContactPage />       
+      </main>
+      
       <Footer />
     </div>
   )

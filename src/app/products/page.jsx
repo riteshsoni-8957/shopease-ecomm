@@ -1,6 +1,6 @@
 // "it is server side products routing"
 import Link from 'next/link';
-import { getSession } from '../../_lib/session';
+import { deleteSession, getSession } from '../../_lib/session';
 import { getProducts } from '../../api/products';
 import Navbar from '../../components/navbar/Navbar';
 import ProductPage from '../../components/shopRouter/productPage';
@@ -19,6 +19,10 @@ async function page() {
 
   const products = await getProducts();   //All products
   console.log("All products: ", products);
+
+    // if(session && !user) {
+    //     await deleteSession();
+    // }
 
   return (
     <div className='w-full h-screen '>

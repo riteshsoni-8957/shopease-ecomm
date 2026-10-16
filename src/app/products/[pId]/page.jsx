@@ -3,7 +3,7 @@ import Navbar from "../../../components/navbar/Navbar";
 import Footer from "../../../components/footer/Footer"
 import ProductDetailsPage from "../../../components/shopRouter/ProductDetailsPage";
 import { getProductById, getProducts } from "../../../api/products";
-import { getSession } from "../../../_lib/session";
+import { deleteSession, getSession } from "../../../_lib/session";
 import { getUserById } from "../../../api/users";
 import Link from "next/link";
 
@@ -27,13 +27,19 @@ async function page({params}) {
     console.log("All Products: ", products);
     console.log("product by pId: ", product);
 
+    // if(session && !user) {
+    //     await deleteSession();
+    // }
+
     return (
         <div>
             {
                 session ? (
                 <>
                     <Navbar />
-                    <ProductDetailsPage user={user} product={product} products={products} />
+                    <main>
+                       <ProductDetailsPage user={user} product={product} products={products} />                     
+                    </main>
                     <Footer />
                 </>
                 ) : (

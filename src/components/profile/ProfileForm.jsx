@@ -36,8 +36,8 @@ function ProfileForm({user}) {
                     id="phone"
                     defaultValue={user.phone ? user.phone : ""}
                     placeholder={user.phone ? "" : "+91 XXXXXXXXXX"}
-                    minLength={14}
-                    maxLength={14}
+                    minLength={10}
+                    maxLength={10}
                     required
                     className='border border-gray-500 rounded-[7px] h-[33px] text-lg px-4 pb-0.5' 
                 />

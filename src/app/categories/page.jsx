@@ -3,7 +3,7 @@ import React from 'react'
 import Navbar from '../../components/navbar/Navbar';
 import Footer from "../../components/footer/Footer"
 import Link from 'next/link';
-import { getSession } from '../../_lib/session';
+import { deleteSession, getSession } from '../../_lib/session';
 import { getCategories } from '../../api/categories';
 import { getUserById } from '../../api/users';
 import CategoryPage from '../../components/categoryRouter/CategoryPage';
@@ -14,13 +14,19 @@ async function page() {
     const categories = await getCategories();
     console.log("categories: ", categories);
 
+    // if(session && !user) {
+    //     await deleteSession();
+    // }
+
     return (
         <div className='w-full h-screen '>
         {
             session ? (
             <>
                 <Navbar />
-                <CategoryPage categories={categories} user={user} />
+                <main>
+                    <CategoryPage categories={categories} user={user} />
+                </main>
                 <Footer />
             </>
             ) : (
