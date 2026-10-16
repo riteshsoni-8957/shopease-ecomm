@@ -110,7 +110,7 @@ function ProfilePage({session, user}) {
                     </ul>
                 </div>
 
-                <div className='w-full md:ml-[270px] lg:ml-[350px] my-7'>
+                <div className='w-full h-fit md:ml-[270px] lg:ml-[350px] my-7'>
                     <h1 className='text-2xl sm:text-3xl font-serif font-bold text-gray-900 mb-5 px-6 sm:px-12 lg:px-24 xl:px-36 2xl:px-48'>
                         Profile Information
                     </h1>
