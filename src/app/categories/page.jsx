@@ -7,7 +7,7 @@ import { deleteSession, getSession } from '../../_lib/session';
 import { getCategories } from '../../api/categories';
 import { getUserById } from '../../api/users';
 import CategoryPage from '../../components/categoryRouter/CategoryPage';
-// import DeleteInvalidSession from "../../components/DeleteInvalidSession";
+import DeleteInvalidSession from "../../components/DeleteInvalidSession";
 
 async function page() {
     const session = await getSession();
@@ -15,9 +15,9 @@ async function page() {
     const categories = await getCategories();
     console.log("categories: ", categories);
 
-    // if(session && !user) {
-    //     return <DeleteInvalidSession />;
-    // }
+    if(session && !user) {
+        return <DeleteInvalidSession />;
+    }
 
     return (
         <div className='w-full h-screen '>
