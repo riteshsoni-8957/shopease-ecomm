@@ -10,7 +10,7 @@ function Login() {
     const [state, formAction, isPending] = useActionState(loginAction, {error: null});
 
     return (
-            <div className='flex flex-col min-[590px]:flex-row w-full md:w-[700px] min-h-[400px] shadow-2xl rounded-2xl overflow-hidden mx-6 my-9'>
+            <div className='flex flex-col min-[590px]:flex-row w-full md:w-[700px] min-h-[400px] shadow-2xl rounded-2xl overflow-hidden my-9'>
                 {/* details container */}
                 <div className='min-[590px]:w-[45%] login-bg bg-no-repeat bg-cover bg-center flex flex-col  px-4 py-4 pb-10 min-[590px]:pb-15'>
                     <img src="/logo-image.png" alt="ShopEase" className='w-20 h-20 mb-1'/>
@@ -81,7 +81,7 @@ function Login() {
                         </div>
 
                         {/* remember & forgot pass div */}
-                        <div className='flex flex-col min-[420px]:flex-row min-[590px]:flex-col md:flex-row justify-between mx-3 text-[16px] space-y-1'>
+                        <div className='flex flex-row justify-between mx-3 text-[12px] min-[390px]:text-[16px] min-[460px]:text-xl min-[590px]:text-sm sm:text-[17px] space-y-1'>
                             <div className='flex items-center space-x-2 hover:text-blue-700 hover:scale-103'>
                                 <input 
                                     type="checkbox" 
@@ -124,7 +124,7 @@ function Login() {
                     </form>
 
                     {/* register div */}
-                    <div className='flex flex-col min-[420px]:flex-row items-center justify-center space-x-3 min-[420px]:text-lg min-[590px]:text-[15px] md:text-[17px]'>
+                    <div className='flex flex-row items-center justify-center space-x-3 text-[12px] min-[380px]:text-lg min-[590px]:text-sm sm:text-[17px]'>
                         <h1 className='font-semibold'>
                             Don&apos;t have an account ? 
                         </h1>

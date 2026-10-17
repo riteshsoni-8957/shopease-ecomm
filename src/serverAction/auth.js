@@ -70,7 +70,7 @@ export const logoutAction = async () => {
 
 
 // register action
-export const registerAction = async (formData) => {
+export const registerAction = async (prevState, formData) => {
     const url = `${API_URL}/users`;
     const response = await axios.get(url);
     const users = response.data;
@@ -96,15 +96,23 @@ export const registerAction = async (formData) => {
     const existingUser = users.find((user) => user.email === formData.get("email"));
     if(existingUser) {
         return {
-            error: "Yorr email id is already registerdd!"      
+            error: "Your email id is already registerdd!"      
         }
     }
 
     try {
         await createUser(newUser);
     } catch (error) {
-        console.log("Error: ", error);
-        throw error;
+        // if(error.response?.status === 404) {
+        //     return {
+        //         error: "Your email id is already registerdd!"
+        //     }      
+        // }
+        // console.log("Register error: ", error.message);
+        
+        // return {
+        //     error: "Something went wrong. Please try again."
+        // }
     }
     redirect("/login");
 }

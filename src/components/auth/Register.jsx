@@ -1,12 +1,13 @@
 "use client"
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React, { useActionState, useState } from 'react'
 import { GoEyeClosed } from 'react-icons/go'
 import { RxEyeOpen } from 'react-icons/rx'
 import { registerAction } from '../../serverAction/auth'
 
 function Register() {
     const [showPass, setShowPass] = useState(false);
+    const [state, formAction, isPending] = useActionState(registerAction, {error: null});
 
     return (
             <div className='flex flex-col min-[590px]:flex-row w-full md:w-[700px] min-h-[400px] shadow-2xl rounded-2xl overflow-hidden mx-6 my-9'>
@@ -33,7 +34,7 @@ function Register() {
                     </h1>
 
                     {/* form */}
-                    <form action={registerAction} className='flex flex-col space-y-4'>
+                    <form action={formAction} className='flex flex-col space-y-4'>
                         {/* label input div 1 */}
                         <div className='flex flex-col space-y-1'>
                             <label 
@@ -102,12 +103,20 @@ function Register() {
                             type='submit'
                             className='bg-blue-500/50 hover:bg-blue-400 w-full h-[35px] rounded-[10px] text-xl font-semibold pb-1'    
                         >
-                            Register
+                            {isPending ? "Registered in..." : "Register"}
                         </button>
+
+                        {
+                            state.error && (
+                                <h1 className='text-[12px] sm:text-sm text-red-500 text-center font-semibold'>
+                                    {state.error}
+                                </h1>
+                            )
+                        }
                     </form>
 
                     {/* login div */}
-                    <div className='flex flex-col min-[420px]:flex-row items-center justify-center space-x-3 min-[420px]:text-lg min-[590px]:text-[15px] md:text-[17px]'>
+                    <div className='flex flex-row items-center justify-center space-x-3 text-[12px] min-[380px]:text-lg min-[590px]:text-sm sm:text-[17px]'>
                         <h1 className='font-semibold'>
                             Already have an Account ?
                         </h1>
