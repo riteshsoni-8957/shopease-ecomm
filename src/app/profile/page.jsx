@@ -5,8 +5,6 @@ import { getUserById } from '../../api/users';
 import ProfilePage from '../../components/profile/ProfilePage';
 import Navbar from '../../components/navbar/Navbar';
 import DeleteInvalidSession from "../../components/DeleteInvalidSession";
-import { router } from 'json-server';
-import { useRouter } from 'next/router';
 
 export const metadata = {
 
