@@ -1,0 +1,814 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Ritesh Soni",
+      "email": "riteshsoni35468@gmail.com",
+      "password": 123456,
+      "role": "Admin",
+      "avatar": "https://in.bmscdn.com/artist/anil-bajpai-33204-1728039313.jpg",
+      "phone": "+91 9336675791",
+      "address": {
+        "street": "Jal Nigam",
+        "city": "Gauriganj",
+        "state": "Uttar Pradesh",
+        "pincode": "227409",
+        "country": "India"
+      },
+      "createdAt": "2026-09-01"
+    },
+    {
+      "id": "2",
+      "name": "Rahul Sharma",
+      "email": "rahul@gmail.com",
+      "password": 123456,
+      "role": "User",
+      "avatar": "",
+      "phone": 9876543211,
+      "address": {
+        "street": "Gomti Nagar",
+        "city": "Lucknow",
+        "state": "Uttar Pradesh",
+        "pincode": 226010,
+        "country": "India"
+      },
+      "createdAt": "2026-09-02"
+    }
+  ],
+
+  "products": [
+    {
+      "id": "1",
+      "productId": "P001",
+      "name": "Classic Cotton T-Shirt",
+      "slug": "classic-cotton-t-shirt",
+      "category": "Men",
+      "subcategory": "T-Shirts",
+      "brand": "UrbanStyle",
+      "description": "Experience everyday comfort and timeless style with the Classic Cotton T-Shirt by UrbanStyle. Crafted from 100% premium cotton, this t-shirt offers a soft, breathable feel that keeps you comfortable throughout the day. Its regular fit provides a relaxed and versatile look, making it perfect for casual outings, college, travel, or daily wear. Available in Black, White, and Blue, it pairs effortlessly with jeans, joggers, or shorts. Enjoy lasting comfort and effortless style with this wardrobe essential. Upgrade your everyday look today and order now before your favorite size sells out!",
+      "price": 599,
+      "originalPrice": 899,
+      "discount": 33,
+      "rating": 4.5,
+      "reviews": 128,
+      "stock": 45,
+      "sku": "US-MTS-001",
+      "images": [
+        "https://m.media-amazon.com/images/I/71MzfNXNdlL._AC_UY1100_.jpg"
+      ],
+      "colors": [
+        "Black",
+        "White",
+        "Blue"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "features": [
+        "100% Cotton",
+        "Regular Fit",
+        "Machine Washable"
+      ],
+      "tags": [
+        "casual",
+        "cotton",
+        "men"
+      ],
+      "isFeatured": true,
+      "isNew": false,
+      "isBestSeller": true
+    },
+    {
+      "id": "2",
+      "productId": "P002",
+      "name": "Slim Fit Denim Jeans",
+      "slug": "slim-fit-denim-jeans",
+      "category": "Men",
+      "subcategory": "Jeans",
+      "brand": "DenimCraft",
+      "description": "Upgrade your wardrobe with Slim Fit Denim Jeans by DenimCraft, designed for a modern look and all-day comfort. Crafted from premium stretch denim, these jeans offer flexibility and a comfortable fit that moves with you. Their stylish slim-fit design makes them perfect for casual outings, college, travel, or everyday wear. Available in classic Blue and Black, they pair effortlessly with t-shirts, shirts, and sneakers. With fade-resistant fabric and versatile styling, these jeans are a must-have. Elevate your style today and order now before your preferred size sells out!",
+      "price": 1299,
+      "originalPrice": 1899,
+      "discount": 32,
+      "rating": 4.6,
+      "reviews": 214,
+      "stock": 32,
+      "sku": "DC-MJ-002",
+      "images": [
+        "https://rukminim3.flixcart.com/image/316/420/xif0q/jean/d/3/p/-original-imahpz8tgdsmhpsy.jpeg?q=80&crop=false"
+      ],
+      "colors": [
+        "Blue",
+        "Black"
+      ],
+      "sizes": [
+        "30",
+        "32",
+        "34",
+        "36",
+        "38"
+      ],
+      "features": [
+        "Stretch Denim",
+        "Slim Fit",
+        "Fade Resistant"
+      ],
+      "tags": [
+        "jeans",
+        "denim",
+        "men"
+      ],
+      "isFeatured": true,
+      "isNew": false,
+      "isBestSeller": true
+    },
+    {
+      "id": "3",
+      "productId": "P003",
+      "name": "Men Casual Shirt",
+      "slug": "men-casual-shirt",
+      "category": "Men",
+      "subcategory": "Shirts",
+      "brand": "StyleHub",
+      "description": "Upgrade your everyday wardrobe with the Men Casual Shirt by StyleHub, designed for effortless style and lasting comfort. Crafted from soft, breathable fabric, this shirt keeps you comfortable throughout the day. Its regular fit offers a relaxed, flattering look, making it perfect for college, office casuals, weekend outings, or everyday wear. Available in Green, White, and Navy, it pairs easily with jeans, chinos, and trousers. Refresh your style with this versatile essential. Shop now and make every casual outfit look effortlessly stylish!",
+      "price": 899,
+      "originalPrice": 1299,
+      "discount": 31,
+      "rating": 4.3,
+      "reviews": 96,
+      "stock": 28,
+      "sku": "SH-MCS-003",
+      "images": [
+        "https://imagescdn.louisphilippe.com/img/app/product/4/40225552-25107793.jpg"
+      ],
+      "colors": [
+        "Green",
+        "White",
+        "Navy"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "features": [
+        "Soft Fabric",
+        "Regular Fit",
+        "Breathable"
+      ],
+      "tags": [
+        "shirt",
+        "casual",
+        "men"
+      ],
+      "isFeatured": false,
+      "isNew": true,
+      "isBestSeller": false
+    },
+    {
+      "id": "4",
+      "productId": "P004",
+      "name": "Oversized Graphic T-Shirt",
+      "slug": "oversized-graphic-t-shirt",
+      "category": "Men",
+      "subcategory": "T-Shirts",
+      "brand": "StreetWear",
+      "description": "Express your unique style with the Oversized Graphic T-Shirt by StreetWear, designed for modern streetwear lovers. Made from premium cotton, this t-shirt offers a soft, breathable feel for all-day comfort. Its relaxed oversized fit and eye-catching graphic print create a trendy look for college, outings, travel, or casual hangouts. Available in Black, Grey, and White, it pairs perfectly with jeans, cargos, and sneakers. Upgrade your streetwear collection today and order now to give your everyday outfits a bold, stylish upgrade!",
+      "price": 699,
+      "originalPrice": 999,
+      "discount": 30,
+      "rating": 4.7,
+      "reviews": 185,
+      "stock": 52,
+      "sku": "SW-OGT-004",
+      "images": [
+        "https://assets.myntassets.com/w_200,q_50,,dpr_3,fl_progressive,f_webp/assets/images/2025/DECEMBER/29/LkTNGmWa_2b73a923d2a142f49a353da811f27a37.jpg"
+      ],
+      "colors": ["Black", "Grey", "White"],
+      "sizes": ["M", "L", "XL", "XXL"],
+      "features": [
+        "Oversized Fit",
+        "Graphic Print",
+        "Premium Cotton"
+      ],
+      "tags": ["oversized", "streetwear", "men"],
+      "isFeatured": true,
+      "isNew": true,
+      "isBestSeller": true
+    },
+    {
+      "id": "5",
+      "productId": "P005",
+      "name": "Men Formal Blazer",
+      "slug": "men-formal-blazer",
+      "category": "Men",
+      "subcategory": "Blazers",
+      "brand": "GentleMan",
+      "description": "Make a lasting impression with the Men Formal Blazer by GentleMan, designed for confidence and sophistication. Crafted from premium fabric, this blazer offers a polished appearance suitable for professional meetings, weddings, parties, and special occasions. Its slim-fit design creates a sharp silhouette while complementing formal shirts and tailored trousers. Available in Black, Navy, and Grey, it adds versatility to your wardrobe. Elevate your formal style and stand out at every important event. Order your preferred blazer today and dress with confidence!",
+      "price": 2499,
+      "originalPrice": 3499,
+      "discount": 29,
+      "rating": 4.5,
+      "reviews": 74,
+      "stock": 18,
+      "sku": "GM-MB-005",
+      "images": [
+        "https://rukminim2.flixcart.com/image/316/420/xif0q/blazer/j/n/o/34-z3-blu-zavy-fashion-original-imahpkrmzskdxhac.jpeg?q=80&crop=false"
+      ],
+      "colors": ["Black", "Navy", "Grey"],
+      "sizes": ["S", "M", "L", "XL"],
+      "features": [
+        "Premium Fabric",
+        "Slim Fit",
+        "Formal Design"
+      ],
+      "tags": ["blazer", "formal", "men"],
+      "isFeatured": true,
+      "isNew": false,
+      "isBestSeller": false
+    },
+    {
+      "id": "6",
+      "productId": "P006",
+      "name": "Floral Dress",
+      "slug": "women-floral-dress",
+      "category": "Women",
+      "subcategory": "Dresses",
+      "brand": "Elegance",
+      "description": "Refresh your wardrobe with the Floral Dress by Elegance, designed to bring effortless charm to your everyday style. Featuring a beautiful floral print and lightweight fabric, this dress offers comfortable wear and a graceful appearance. Its comfort-fit design makes it ideal for brunches, holidays, casual outings, parties, and weekend gatherings. Available in Pink, Blue, and Yellow, it is easy to style with sandals, flats, or your favorite accessories. Add a fresh, feminine touch to your collection today. Shop now and find your perfect look!",
+      "price": 1199,
+      "originalPrice": 1699,
+      "discount": 29,
+      "rating": 4.6,
+      "reviews": 142,
+      "stock": 35,
+      "sku": "EL-WFD-006",
+      "images": [
+        "https://www.missmosa.in/cdn/shop/files/Hannah_Floral_Maxi_Dress_3.jpg?format=webp&v=1783687939&width=500"
+      ],
+      "colors": ["Pink", "Blue", "Yellow"],
+      "sizes": ["S", "M", "L", "XL"],
+      "features": [
+        "Floral Print",
+        "Lightweight",
+        "Comfort Fit"
+      ],
+      "tags": ["dress", "floral", "women"],
+      "isFeatured": true,
+      "isNew": true,
+      "isBestSeller": true
+    },
+    {
+      "id": "7",
+      "productId": "P007",
+      "name": "Oversized Hoodie",
+      "slug": "women-oversized-hoodie",
+      "category": "Women",
+      "subcategory": "Hoodies",
+      "brand": "CozyWear",
+      "description": "Stay cozy and stylish with the Oversized Hoodie by CozyWear, a perfect addition to your casual wardrobe. Designed with a warm fleece interior, this hoodie provides a soft feel and extra comfort on chilly days. Its relaxed oversized fit creates a laid-back look that works well for college, travel, lounging, and everyday outings. Available in Black, Cream, and Grey, it pairs effortlessly with jeans, leggings, and joggers. Bring comfort and modern street style together this season. Shop your favorite color today and upgrade your winter wardrobe!",
+      "price": 999,
+      "originalPrice": 1499,
+      "discount": 33,
+      "rating": 4.4,
+      "reviews": 89,
+      "stock": 41,
+      "sku": "CW-WH-007",
+      "images": [
+        "https://img.tatacliq.com/images/i29/437Wx649H/MP000000029665137_437Wx649H_202601022359581.jpeg"
+      ],
+      "colors": ["Black", "Cream", "Grey"],
+      "sizes": ["S", "M", "L", "XL"],
+      "features": [
+        "Fleece Interior",
+        "Oversized Fit",
+        "Warm"
+      ],
+      "tags": ["hoodie", "winter", "women"],
+      "isFeatured": false,
+      "isNew": true,
+      "isBestSeller": false
+    },
+    {
+      "id": "8",
+      "productId": "P008",
+      "name": "High Waist Jeans",
+      "slug": "women-high-waist-jeans",
+      "category": "Women",
+      "subcategory": "Jeans",
+      "brand": "DenimCraft",
+      "description": "Discover a flattering everyday style with High Waist Jeans by DenimCraft, designed for a modern and confident look. The high-waist design pairs with a stylish slim fit to create a versatile silhouette, while stretch fabric offers flexibility and comfortable movement. Perfect for college, shopping, casual outings, and weekend plans, these jeans complement crop tops, shirts, t-shirts, and sneakers. Available in classic Blue and Black, they make outfit styling simple and effortless. Refresh your denim collection today and order your preferred size for a stylish everyday look!",
+      "price": 1399,
+      "originalPrice": 1999,
+      "discount": 30,
+      "rating": 4.5,
+      "reviews": 167,
+      "stock": 29,
+      "sku": "DC-WJ-008",
+      "images": [
+        "https://m.media-amazon.com/images/I/91IpcfmzexL._AC_UY1100_.jpg"
+      ],
+      "colors": ["Blue", "Black"],
+      "sizes": ["26", "28", "30", "32", "34"],
+      "features": [
+        "High Waist",
+        "Stretch Fabric",
+        "Slim Fit"
+      ],
+      "tags": ["jeans", "denim", "women"],
+      "isFeatured": true,
+      "isNew": false,
+      "isBestSeller": true
+    },
+    {
+      "id": "9",
+      "productId": "P009",
+      "name": "Running Sneakers",
+      "slug": "running-sneakers",
+      "category": "Footwear",
+      "subcategory": "Sneakers",
+      "brand": "SportX",
+      "description": "Take every step with confidence in Running Sneakers by SportX, designed for active lifestyles and everyday movement. Featuring a cushioned sole, lightweight construction, and breathable mesh, these sneakers offer comfortable support during walks, workouts, jogging, and daily activities. Their sporty design makes them easy to pair with track pants, shorts, and casual outfits. Available in Black, White, and Red, they combine versatile styling with an athletic appearance. Upgrade your footwear collection today and order your preferred size to step into comfort and style!",
+      "price": 1799,
+      "originalPrice": 2499,
+      "discount": 28,
+      "rating": 4.6,
+      "reviews": 234,
+      "stock": 36,
+      "sku": "SX-RS-009",
+      "images": [
+        "https://m.media-amazon.com/images/I/61W5EUtNJrL._AC_UY1000_.jpg"
+      ],
+      "colors": ["Black", "White", "Red"],
+      "sizes": ["7", "8", "9", "10", "11"],
+      "features": [
+        "Cushioned Sole",
+        "Lightweight",
+        "Breathable Mesh"
+      ],
+      "tags": ["shoes", "running", "sports"],
+      "isFeatured": true,
+      "isNew": true,
+      "isBestSeller": true
+    },
+    {
+      "id": "10",
+      "productId": "P010",
+      "name": "Classic White Sneakers",
+      "slug": "classic-white-sneakers",
+      "category": "Footwear",
+      "subcategory": "Sneakers",
+      "brand": "WalkPro",
+      "description": "Complete your everyday outfits with Classic White Sneakers by WalkPro, designed for clean styling and versatile comfort. Their timeless design pairs effortlessly with jeans, chinos, dresses, and casual wear, making them suitable for college, shopping, travel, and weekend outings. Featuring a durable rubber sole and easy-clean finish, these sneakers are practical for regular use while maintaining a fresh appearance. Available in White and Black, they offer simple styling options for different looks. Give your footwear collection a timeless upgrade today. Shop now and step out in effortless style!",
+      "price": 1499,
+      "originalPrice": 2199,
+      "discount": 32,
+      "rating": 4.5,
+      "reviews": 198,
+      "stock": 42,
+      "sku": "WP-CWS-010",
+      "images": [
+        "https://rukminim3.flixcart.com/image/260/260/xif0q/shoe/o/l/p/7-sd9117g-7-sparx-white-original-imahqy5uafbsumrb.jpeg?q=80&crop=false"
+      ],
+      "colors": ["White", "Black"],
+      "sizes": ["6", "7", "8", "9", "10", "11"],
+      "features": [
+        "Rubber Sole",
+        "Casual Design",
+        "Easy Clean"
+      ],
+      "tags": ["sneakers", "casual", "footwear"],
+      "isFeatured": true,
+      "isNew": false,
+      "isBestSeller": true
+    },
+    {
+      "id": "11",
+      "productId": "P011",
+      "name": "Premium Sunglasses",
+      "slug": "premium-sunglasses",
+      "category": "Accessories",
+      "subcategory": "Sunglasses",
+      "brand": "VisionPro",
+      "description": "Elevate your everyday style with Premium Sunglasses by VisionPro, designed for a fashionable look and comfortable wear. Featuring UV protection lenses, these sunglasses help protect your eyes from harmful ultraviolet rays during outdoor activities. Their polarized lenses help reduce glare, while the lightweight frame offers comfortable wear throughout the day. Available in classic Black and Brown, they complement casual outfits, travel looks, and weekend adventures. Complete your look with a stylish accessory that combines fashion and function. Shop VisionPro sunglasses today and step out with confidence!",
+      "price": 799,
+      "originalPrice": 1199,
+      "discount": 33,
+      "rating": 4.4,
+      "reviews": 93,
+      "stock": 44,
+      "sku": "VP-PS-011",
+      "images": [
+        "https://www.rkumar.in/cdn/shop/files/IDS3381C3PSG_1.jpg?v=1776857243&width=1100"
+      ],
+      "colors": ["Black", "Brown"],
+      "sizes": ["One Size"],
+      "features": [
+        "UV Protection",
+        "Polarized Lens",
+        "Lightweight Frame"
+      ],
+      "tags": ["sunglasses", "fashion", "accessories"],
+      "isFeatured": true,
+      "isNew": false,
+      "isBestSeller": false
+    },
+    {
+      "id": "12",
+      "productId": "P012",
+      "name": "Classic Analog Watch",
+      "slug": "classic-analog-watch",
+      "category": "Accessories",
+      "subcategory": "Watches",
+      "brand": "TimeCraft",
+      "description": "Add timeless elegance to your everyday look with the Classic Analog Watch by TimeCraft. Designed with a premium metal finish, this watch brings a refined touch to both formal and casual outfits. Its reliable quartz movement helps keep time accurately, while the stainless steel construction offers a sophisticated appearance. The water-resistant design adds everyday practicality, making it suitable for work, meetings, celebrations, and daily wear. Available in Black, Silver, and Gold, it complements different personal styles. Upgrade your accessories collection today and order your favorite finish!",
+      "price": 1599,
+      "originalPrice": 2299,
+      "discount": 30,
+      "rating": 4.5,
+      "reviews": 154,
+      "stock": 25,
+      "sku": "TC-AW-012",
+      "images": [
+        "https://media.meggfashion.in/products/c340e61d-0820-4d5f-b2cd-6b7170bd65ae/1776775583054_0.webp"
+      ],
+      "colors": ["Black", "Silver", "Gold"],
+      "sizes": ["One Size"],
+      "features": [
+        "Quartz Movement",
+        "Water Resistant",
+        "Stainless Steel"
+      ],
+      "tags": ["watch", "fashion", "accessories"],
+      "isFeatured": true,
+      "isNew": false,
+      "isBestSeller": true
+    },
+    {
+      "id": "13",
+      "productId": "P013",
+      "name": "Wireless Bluetooth Headphones",
+      "slug": "wireless-bluetooth-headphones",
+      "category": "Electronics",
+      "subcategory": "Headphones",
+      "brand": "SoundMax",
+      "description": "Enjoy your favorite music with Wireless Bluetooth Headphones by SoundMax, designed for immersive listening and everyday convenience. Experience deep bass and clear audio while enjoying the freedom of wireless connectivity. Bluetooth 5.3 provides convenient pairing with compatible devices, while the impressive 40-hour battery life helps keep your music going longer between charges. Noise reduction helps minimize unwanted background sounds for a more enjoyable listening experience. Available in Black and White, these headphones suit travel, work, study, and entertainment. Upgrade your audio experience today and order your SoundMax headphones!",
+      "price": 2499,
+      "originalPrice": 3499,
+      "discount": 29,
+      "rating": 4.7,
+      "reviews": 341,
+      "stock": 27,
+      "sku": "SM-WBH-013",
+      "images": [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKSMNorBCykoBPA1TwAIj4tyqlzbzIQohfHQHT80qKqA&s"
+      ],
+      "colors": ["Black", "White"],
+      "sizes": ["One Size"],
+      "features": [
+        "Bluetooth 5.3",
+        "40 Hour Battery",
+        "Noise Reduction"
+      ],
+      "tags": ["headphones", "wireless", "electronics"],
+      "isFeatured": true,
+      "isNew": true,
+      "isBestSeller": true
+    },
+    {
+      "id": "14",
+      "productId": "P014",
+      "name": "Smart Watch Pro",
+      "slug": "smart-watch-pro",
+      "category": "Electronics",
+      "subcategory": "Smart Watches",
+      "brand": "TechFit",
+      "description": "Stay connected and keep track of your daily activity with Smart Watch Pro by TechFit. Designed for modern lifestyles, this smartwatch combines useful fitness features with convenient smart notifications. Monitor your heart rate, track sleep patterns, and stay updated with Bluetooth calling from your wrist when connected to a compatible smartphone. Its versatile design makes it suitable for workouts, office hours, travel, and everyday activities. Available in Black and Silver, it complements both sporty and casual outfits. Make your daily routine smarter today and order Smart Watch Pro to upgrade your wearable technology!",
+      "price": 2999,
+      "originalPrice": 4499,
+      "discount": 33,
+      "rating": 4.6,
+      "reviews": 287,
+      "stock": 22,
+      "sku": "TF-SWP-014",
+      "images": [
+        "https://image.made-in-china.com/202f0j00jsNlmIqWPhoS/Wearfit-PRO-Low-Energy-Bt-Call-Smartwatch-1-78-Inches-3D-Curved-Screen-Online-Smart-Watch-with-Intelligent-Split-Screen-Function.jpg"
+      ],
+      "colors": ["Black", "Silver"],
+      "sizes": ["One Size"],
+      "features": [
+        "Heart Rate Monitor",
+        "Sleep Tracking",
+        "Bluetooth Calling"
+      ],
+      "tags": ["smartwatch", "fitness", "electronics"],
+      "isFeatured": true,
+      "isNew": true,
+      "isBestSeller": true
+    },
+    {
+      "id": "15",
+      "productId": "P015",
+      "name": "Mechanical Gaming Keyboard",
+      "slug": "mechanical-gaming-keyboard",
+      "category": "Electronics",
+      "subcategory": "Computer Accessories",
+      "brand": "GameCore",
+      "description": "Level up your gaming setup with the Mechanical Gaming Keyboard by GameCore, built for responsive control and immersive gameplay. Its mechanical switches deliver tactile keystrokes, while RGB lighting adds a dynamic look to your desk. Anti-ghosting technology helps register multiple key presses during fast-paced gaming sessions. The versatile design also works well for typing, studying, and everyday computer use. Available in Black and White, this keyboard fits a variety of gaming and workstation setups. Upgrade your desk and gaming experience today. Order your GameCore keyboard and get ready for your next session!",
+      "price": 1899,
+      "originalPrice": 2799,
+      "discount": 32,
+      "rating": 4.7,
+      "reviews": 231,
+      "stock": 16,
+      "sku": "GC-MGK-015",
+      "images": [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7Q9Gfdzpk08eeHSLGdCbbwkA99Ge3rfv9PAZlomC0OYEkgZ6W_UdxOrc&s=10"
+      ],
+      "colors": ["Black", "White"],
+      "sizes": ["Full Size"],
+      "features": [
+        "Mechanical Switches",
+        "RGB Lighting",
+        "Anti-Ghosting"
+      ],
+      "tags": ["keyboard", "gaming", "electronics"],
+      "isFeatured": true,
+      "isNew": false,
+      "isBestSeller": true
+    },
+    {
+      "id": "16",
+      "productId": "P016",
+      "name": "Ceramic Coffee Mug",
+      "slug": "ceramic-coffee-mug",
+      "category": "Home & Living",
+      "subcategory": "Kitchen",
+      "brand": "HomeNest",
+      "description": "Make every coffee or tea break special with the Ceramic Coffee Mug by HomeNest. Crafted from ceramic, this mug offers a simple, stylish design that fits comfortably into your daily routine. Its 350ml capacity is suitable for your favorite hot beverages at home, in the office, or during study sessions. The heat-resistant construction supports everyday use, while the dishwasher-safe design makes cleaning convenient. Available in White, Black, and Blue, it also makes a thoughtful gift for friends and family. Bring a little extra comfort to your daily routine. Order your favorite mug today!",
+      "price": 299,
+      "originalPrice": 499,
+      "discount": 40,
+      "rating": 4.4,
+      "reviews": 87,
+      "stock": 80,
+      "sku": "HN-CCM-016",
+      "images": [
+        "https://m.media-amazon.com/images/I/61OYo5mIOpL.jpg"
+      ],
+      "colors": ["White", "Black", "Blue"],
+      "sizes": ["350ml"],
+      "features": [
+        "Ceramic",
+        "Dishwasher Safe",
+        "Heat Resistant"
+      ],
+      "tags": ["mug", "kitchen", "home"],
+      "isFeatured": false,
+      "isNew": true,
+      "isBestSeller": false
+    },
+    {
+      "id": "17",
+      "productId": "P017",
+      "name": "Modern Table Lamp",
+      "slug": "modern-table-lamp",
+      "category": "Home & Living",
+      "subcategory": "Lighting",
+      "brand": "HomeNest",
+      "description": "Create a warm and inviting atmosphere with the Modern Table Lamp by HomeNest. Its minimalist design adds a stylish touch to bedrooms, study tables, living rooms, and office desks. Designed for use with compatible LED bulbs, this lamp offers a practical lighting solution for reading, working, or relaxing in the evening. Its versatile Black and White color options blend easily with contemporary and classic interiors. Whether you are refreshing your workspace or decorating your home, this lamp combines simplicity with everyday functionality. Brighten your favorite corner today and order yours to complete your space!",
+      "price": 899,
+      "originalPrice": 1299,
+      "discount": 31,
+      "rating": 4.5,
+      "reviews": 63,
+      "stock": 26,
+      "sku": "HN-MTL-017",
+      "images": [
+        "https://i.etsystatic.com/43745484/r/il/03e726/6750679610/il_1080xN.6750679610_j6e7.jpg"
+      ],
+      "colors": ["White", "Black"],
+      "sizes": ["Medium"],
+      "features": [
+        "LED Compatible",
+        "Minimal Design",
+        "Energy Efficient"
+      ],
+      "tags": ["lamp", "lighting", "home"],
+      "isFeatured": true,
+      "isNew": false,
+      "isBestSeller": false
+    },
+    {
+      "id": "18",
+      "productId": "P018",
+      "name": "Vitamin C Face Serum",
+      "slug": "vitamin-c-face-serum",
+      "category": "Beauty",
+      "subcategory": "Skincare",
+      "brand": "GlowCare",
+      "description": "Refresh your skincare routine with Vitamin C Face Serum by GlowCare, designed to support a brighter, fresher-looking complexion. Its lightweight texture fits easily into your daily skincare routine without feeling heavy on the skin. The formula features Vitamin C, a popular skincare ingredient used to improve the appearance of uneven skin tone and dullness. Packaged in a convenient 30ml size, it is easy to incorporate into your morning or evening routine. Choose consistent skincare that suits your needs and always patch-test new products. Give your routine a fresh start and shop GlowCare serum today!",
+      "price": 699,
+      "originalPrice": 999,
+      "discount": 30,
+      "rating": 4.6,
+      "reviews": 218,
+      "stock": 54,
+      "sku": "GC-VCS-018",
+      "images": [
+        "https://images.pexels.com/photos/28255124/pexels-photo-28255124/free-photo-of-c-vitamin-serum.jpeg?auto=compress&w=1260&h=750&dpr=1"
+      ],
+      "colors": [],
+      "sizes": ["30ml"],
+      "features": [
+        "Vitamin C",
+        "Lightweight",
+        "Daily Use"
+      ],
+      "tags": ["serum", "skincare", "beauty"],
+      "isFeatured": true,
+      "isNew": false,
+      "isBestSeller": true
+    },
+    {
+      "id": "19",
+      "productId": "P019",
+      "name": "Travel Duffel Bag",
+      "slug": "travel-duffel-bag",
+      "category": "Travel",
+      "subcategory": "Travel Bags",
+      "brand": "TravelPro",
+      "description": "Pack smarter for your next adventure with the Travel Duffel Bag by TravelPro. Designed with a spacious interior, this bag offers room for clothing, toiletries, and other travel essentials for weekend trips and short getaways. Its water-resistant construction helps protect your belongings from light moisture, while multiple pockets make organizing smaller items easier. Available in Black, Grey, and Blue, it combines practical storage with a versatile travel-ready look. Whether you are heading to the gym or planning a quick escape, this duffel bag is ready to go. Order yours today and prepare for your next trip!",
+      "price": 1199,
+      "originalPrice": 1799,
+      "discount": 33,
+      "rating": 4.5,
+      "reviews": 109,
+      "stock": 31,
+      "sku": "TP-TDB-019",
+      "images": [
+        "https://rukmini1.flixcart.com/image/300/300/xif0q/duffel-bag/p/c/f/13-combo-pack-2-travel-pro-wheeled-duffel-bags-smrt-combo-2-original-imahgxf67aup9ezz.jpeg"
+      ],
+      "colors": ["Black", "Grey", "Blue"],
+      "sizes": ["Large"],
+      "features": [
+        "Large Capacity",
+        "Water Resistant",
+        "Multiple Pockets"
+      ],
+      "tags": ["travel", "bag", "duffel"],
+      "isFeatured": true,
+      "isNew": true,
+      "isBestSeller": false
+    },
+    {
+      "id": "20",
+      "productId": "P020",
+      "name": "Premium Yoga Mat",
+      "slug": "premium-yoga-mat",
+      "category": "Sports",
+      "subcategory": "Fitness Accessories",
+      "brand": "FitLife",
+      "description": "Build a more comfortable workout routine with the Premium Yoga Mat by FitLife. Designed with a non-slip surface, this 6mm mat provides a supportive base for yoga, stretching, meditation, and home fitness sessions. Its eco-friendly design makes it a practical addition to your regular exercise essentials, while the included carry strap helps you transport it conveniently. Available in Black, Purple, Blue, and Green, it suits a range of personal styles. Create your own comfortable workout space at home or on the go. Upgrade your fitness essentials today and order your FitLife yoga mat!",
+      "price": 899,
+      "originalPrice": 1299,
+      "discount": 31,
+      "rating": 4.7,
+      "reviews": 194,
+      "stock": 46,
+      "sku": "FL-YMP-020",
+      "images": [
+        "https://m.media-amazon.com/images/I/71f1Oz0x1KL._AC_UF894,1000_QL80_.jpg"
+      ],
+      "colors": ["Black", "Purple", "Blue", "Green"],
+      "sizes": ["6mm"],
+      "features": [
+        "Non-Slip",
+        "Eco Friendly",
+        "Easy Carry Strap"
+      ],
+      "tags": ["yoga", "fitness", "sports"],
+      "isFeatured": true,
+      "isNew": true,
+      "isBestSeller": true
+    }
+  ],
+
+  "categories": [
+    {
+      "id": 1,
+      "name": "Men",
+      "slug": "men",
+      "description": "Stylish and comfortable fashion products for men.",
+      "image": "https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?auto=format&fit=crop&w=800&q=80",
+      "subcategories": ["T-Shirts", "Jeans", "Shirts", "Blazers"],
+      "productIds": [1, 2, 3, 4, 5],
+      "productCount": 5,
+      "isFeatured": true
+    },
+    {
+      "id": 2,
+      "name": "Women",
+      "slug": "women",
+      "description": "Trendy fashion and clothing collection for women.",
+      "image": "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=800&q=80",
+      "subcategories": ["Dresses", "Hoodies", "Jeans"],
+      "productIds": [6, 7, 8],
+      "productCount": 3,
+      "isFeatured": true
+    },
+    {
+      "id": 3,
+      "name": "Footwear",
+      "slug": "footwear",
+      "description": "Comfortable and stylish footwear for everyday use.",
+      "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80",
+      "subcategories": ["Sneakers"],
+      "productIds": [9, 10],
+      "productCount": 2,
+      "isFeatured": true
+    },
+    {
+      "id": 4,
+      "name": "Accessories",
+      "slug": "accessories",
+      "description": "Complete your look with premium fashion accessories.",
+      "image": "https://images.unsplash.com/photo-1523170335258-f5ed11844a49?auto=format&fit=crop&w=800&q=80",
+      "subcategories": ["Sunglasses", "Watches"],
+      "productIds": [11, 12],
+      "productCount": 2,
+      "isFeatured": true
+    },
+    {
+      "id": 5,
+      "name": "Electronics",
+      "slug": "electronics",
+      "description": "Modern electronics and smart gadgets for everyday life.",
+      "image": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=800&q=80",
+      "subcategories": [
+        "Headphones",
+        "Smart Watches",
+        "Computer Accessories"
+      ],
+      "productIds": [13, 14, 15],
+      "productCount": 3,
+      "isFeatured": true
+    },
+    {
+      "id": 6,
+      "name": "Home & Living",
+      "slug": "home-living",
+      "description": "Useful and stylish products for your home.",
+      "image": "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80",
+      "subcategories": ["Kitchen", "Lighting"],
+      "productIds": [16, 17],
+      "productCount": 2,
+      "isFeatured": true
+    },
+    {
+      "id": 7,
+      "name": "Beauty",
+      "slug": "beauty",
+      "description": "Beauty and skincare products for your daily routine.",
+      "image": "https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=800&q=80",
+      "subcategories": ["Skincare"],
+      "productIds": [18],
+      "productCount": 1,
+      "isFeatured": true
+    },
+    {
+      "id": 8,
+      "name": "Travel",
+      "slug": "travel",
+      "description": "Travel essentials designed for comfortable journeys.",
+      "image": "https://images.unsplash.com/photo-1542296332-2e4473faf563?auto=format&fit=crop&w=800&q=80",
+      "subcategories": ["Travel Bags"],
+      "productIds": [19],
+      "productCount": 1,
+      "isFeatured": false
+    },
+    {
+      "id": 9,
+      "name": "Sports",
+      "slug": "sports",
+      "description": "Fitness and sports products for an active lifestyle.",
+      "image": "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=800&q=80",
+      "subcategories": ["Fitness Accessories"],
+      "productIds": [20],
+      "productCount": 1,
+      "isFeatured": true
+    }
+  ],
+
+  "carts": [
+    {
+      "id": "unique id",
+      "cartId": "session ki Id",
+      "product ka data": ""
+    }
+  ]
+}

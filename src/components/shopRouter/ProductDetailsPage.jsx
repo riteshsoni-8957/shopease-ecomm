@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { CircleArrowLeft, SearchStatus2, ShieldNetwork } from 'reicon-react';
+import { cartAction } from "../../serverAction/auth";
 
 function ProductDetailsPage({user, product, products}) {
 
@@ -60,32 +61,36 @@ function ProductDetailsPage({user, product, products}) {
                     }
                    </div>
 
-                   <div className='flex gap-3 my-2'>
-                    {
-                        product.sizes?.map((size, index) => (
-                            <button 
-                                key={index}
-                                className="border border-green-950 rounded-[5px] px-2 hover:bg-green-950 hover:text-white transition duration-300 focus:bg-green-950 focus:text-white "
-                            >
-                                {size}
-                            </button>
-                        ))
-                    }
-                   </div>
+                    <div className='flex gap-3 my-2'>
+                        {
+                            product.sizes?.map((size, index) => (
+                                <button 
+                                    key={index}
+                                    className="border border-green-950 rounded-[5px] px-2 hover:bg-green-950 hover:text-white transition duration-300 focus:bg-green-950 focus:text-white "
+                                >
+                                    {size}
+                                </button>
+                            ))
+                        }
+                    </div>
 
-                   <button 
-                        type='button' 
-                        className='bg-green-950 text-white font-semibold px-4 py-2 rounded-[5px] hover:bg-green-800 transition duration-300'
+                    <form 
+                        action={cartAction.bind(null, product.productId)}
                     >
-                        Add to Cart
-                   </button>
+                       <button 
+                            type='submit' 
+                            className='w-full bg-green-950 text-white font-semibold px-4 py-2 rounded-[5px] hover:bg-green-800 transition duration-300'
+                        >
+                            Add to Cart
+                        </button> 
+                    </form>
 
-                   <button 
-                        type='submit'
-                        className='bg-gray-300 border border-gray-700 text-black font-semibold px-4 py-2 rounded-[5px] hover:bg-gray-300/50 transition duration-300'    
-                    >
-                        Buy Now
-                   </button>
+                    <button 
+                            type='submit'
+                            className='bg-gray-300 border border-gray-700 text-black font-semibold px-4 py-2 rounded-[5px] hover:bg-gray-300/50 transition duration-300'    
+                        >
+                            Buy Now
+                    </button>
                 </div>
             </div>
 

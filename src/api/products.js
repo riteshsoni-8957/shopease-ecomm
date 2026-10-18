@@ -9,8 +9,6 @@ export const getProducts = async() => {
     const response = await axios.get(url);
     const products = response.data;
     return products;
-
-    console.log("All Products: ", products);
 }
 
 
@@ -28,8 +26,6 @@ export const createProduct = async (newProduct) => {
     const url = `${API_URL}/products`;
     const response = await axios.post(url, newProduct);
     return response.data;
-    
-    console.log("New Produc: ", newProduct);
 }
 
 
@@ -38,14 +34,10 @@ export const updateProduct = async (pId, updatedData) => {
     const url = `${API_URL}/products/?productId=${pId}`;
     const response = await axios.put(url, updatedData);    
     return response.data[0];
-
-    console.log("url: ", url);
-    console.log("Product Id: ". pId);
-    console.log("Updated Product: ", updateProduct);
 }
 
 
-// delete Product
+// delete Product using unique pId
 export const deleteProduct = async (pId) => {
     const url = `${API_URL}/products/?productId=${pId}`; 
     const response = await axios.delete(url);

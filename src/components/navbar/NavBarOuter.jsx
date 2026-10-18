@@ -59,7 +59,7 @@ function NavBarOuter({session, user}) {
                 {
                     session ? (
                         <div className='flex items-center space-x-8'>
-                            <Link href="/cart" className="text-gray-900 text-2xl hover:scale-120">
+                            <Link href="/carts" className="text-gray-900 text-2xl hover:scale-120">
                                 <FaCartPlus />
                             </Link>
 

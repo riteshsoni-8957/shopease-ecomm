@@ -34,17 +34,15 @@ async function page() {
             <ProductPage user={user} products={products} />
           </>
         ) : (
-          <>
-            <div className='w-full h-screen flex items-center justify-center'>
-                <div className='flex text-sm min-[500px]:text-xl sm:text-2xl lg:text-3xl space-x-2'>
-                    <h1>Please</h1>
-                    <Link href="/login" className='text-red-500 hover:underline'>
-                        Login
-                    </Link>
-                    <h1>to Access your Products</h1>
-                </div>
-            </div>
-          </>
+          <div className='w-full h-screen flex items-center justify-center'>
+              <div className='flex text-sm min-[500px]:text-xl sm:text-2xl lg:text-3xl space-x-2'>
+                  <h1>Please</h1>
+                  <Link href="/login" className='text-red-500 hover:underline'>
+                      Login
+                  </Link>
+                  <h1>to Access your Products</h1>
+              </div>
+          </div>
         )
       }
     </div>

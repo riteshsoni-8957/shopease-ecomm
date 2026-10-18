@@ -9,8 +9,6 @@ export const getCategories = async() => {
     const response = await axios.get(url);
     const categories = response.data;
     return categories;
-
-    console.log("All categories: ", categories);
 }
 
 
@@ -20,9 +18,6 @@ export const getCategoryById = async (id) => {
     const response = await axios.get(url);
     const category = response.data;
     return category;
-
-    console.log("Category ID:", id);
-    console.log("URL:", url);
 }
 
 
@@ -31,8 +26,6 @@ export const createCategory = async (newCategory) => {
     const url = `${API_URL}/categories`;
     const response = await axios.post(url, newCategory);
     return response.data;
-    
-    console.log("New Category: ", newCategory);
 }
 
 
@@ -41,10 +34,6 @@ export const updateCategory = async (id, updatedData) => {
     const url = `${API_URL}/categories/${id}`;
     const response = await axios.put(url, updatedData);    
     return response.data;
-
-    console.log("url: ", url);
-    console.log("Category Id: ", id);
-    console.log("Updated Category: ", updatedData);
 }
 
 
