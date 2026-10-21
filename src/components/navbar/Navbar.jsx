@@ -18,7 +18,7 @@ async function Navbar() {
     }
 
     return (
-        <div className="z-9999 sticky top-0 flex flex-col px-6 sm:px-12 lg:px-18 py-2 bg-white shadow-md">
+        <div className="z-9999 sticky top-0 left-0 right-0 flex flex-col px-6 sm:px-12 lg:px-18 py-2 bg-white shadow-md">
             <NavBarOuter
                 session={session}
                 user={user}

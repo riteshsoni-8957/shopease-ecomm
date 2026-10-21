@@ -12,15 +12,15 @@ async function Category() {
         Shop By Category
       </h1>
       
-      <div className='grid grid-cols-2 min-[390px]:grid-cols-3 min-[490px]:grid-cols-4 min-[590px]:grid-cols-5 min-[720px]:grid-cols-6 md:grid-cols-4 lg:grid-cols-7 2xl:grid-cols-9 text-center gap-8 sm:ml-8'>
+      <div className='flex flex-row overflow-hidden text-center gap-13 sm:ml-8'>
         {
           categories.map((category) => (
             <div key={category.id} className=''>
-              <Link href={`products?category=${encodeURIComponent(category.name)}`} className='w-full h-full flex flex-col items-center space-y-2 lg:space-y-4 font-mono cursor-pointer hover:scale-110 transition duration-300'>
+              <Link href={`products?category=${encodeURIComponent(category.name)}`} className='w-18 md:w-22 xl:w-26 2xl:w-30 h-full flex flex-col items-center justify-center p-2 space-y-2 lg:space-y-4 font-mono cursor-pointer hover:scale-110 transition duration-300'>
                 <img 
                   src={category.image} 
                   alt={category.slug} 
-                  className='w-10 h-10 md:w-14 md:h-14 xl:w-19 xl:h-19 2xl:w-25 2xl:h-25 object-cover object-center rounded-full' 
+                  className='w-18 h-18 md:w-22 md:h-22 xl:w-26 xl:h-26 2xl:w-30 2xl:h-30 object-cover object-center rounded-full' 
                 />
                 <h2 className='text-sm md:text-xl font-semibold text-gray-900'>
                   {category.name}

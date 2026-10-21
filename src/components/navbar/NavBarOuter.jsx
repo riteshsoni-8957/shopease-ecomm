@@ -14,47 +14,50 @@ function NavBarOuter({session, user}) {
 
     return (
         <div className='flex items-center justify-between'>
-            {/* navbar logo */}
-            <div className=''>
-                <img 
-                    src="/logo-image.png" 
-                    alt="logo" 
-                    className='h-14 w-14'
-                />
-            </div>
+            {/* navbar logo and menu icon */}
+            <div className='flex flex-row gap-8 sm:gap-16 xl:gap-24 2xl:gap-32'>
+                {/* navbar logo */}            
+                <Link href={"/"}>
+                    <img 
+                        src="/logo-image.png" 
+                        alt="logo" 
+                        className='h-14 w-14 hover:scale-105'
+                    />
+                </Link>
 
-            {/* menu */}
-            <div className='flex items-center justify-center'>
-                <ul className={`fixed top-18 left-0  bg-white shadow-lg md:shadow-none h-screen flex flex-col items-center justify-center space-y-12 md:static md:flex-row md:h-auto md:w-auto md:space-y-0 md:space-x-12 lg:space-x-26 md:bg-inherit ${sidebar ? "w-[250px]" : "w-0"} overflow-hidden transition-all duration-300 ease-in-out`}>
-                    <li>
-                        <Link href="/" className="text-gray-900 text-xl hover:font-bold hover:text-gray-700/90">
-                            Home
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="/products" className="text-gray-900 text-xl hover:font-bold hover:text-gray-700/90">
-                            Shop
-                        </Link>
-                    </li> 
-                    <li>
-                        <Link href="/categories" className="text-gray-900 text-xl hover:font-bold hover:text-gray-700/90">
-                            Category
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="/contact" className="text-gray-900 text-xl hover:font-bold hover:text-gray-700/90">
-                            Contact
-                        </Link>
-                    </li>
-                </ul>
+                {/* menu */}
+                <div className='flex items-center justify-center'>
+                    <ul className={`fixed top-18 left-0  bg-white shadow-lg md:shadow-none h-screen flex flex-col items-center justify-center space-y-12 md:static md:flex-row md:h-auto md:w-auto md:space-y-0 md:space-x-12 lg:space-x-22 xl:space-x-26 2xl:space-x-30 md:bg-inherit ${sidebar ? "w-[250px]" : "w-0"} overflow-hidden transition-all duration-300 ease-in-out`}>
+                        <li>
+                            <Link href="/" className="text-gray-900 text-xl hover:font-bold hover:text-gray-700/90">
+                                Home
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="/products" className="text-gray-900 text-xl hover:font-bold hover:text-gray-700/90">
+                                Shop
+                            </Link>
+                        </li> 
+                        <li>
+                            <Link href="/categories" className="text-gray-900 text-xl hover:font-bold hover:text-gray-700/90">
+                                Category
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="/contact" className="text-gray-900 text-xl hover:font-bold hover:text-gray-700/90">
+                                Contact
+                            </Link>
+                        </li>
+                    </ul>
 
-                {/* menu open and close icon */}
-                <div className='text-4xl text-gray-900 hover:text-gray-700/90 cursor-pointer md:hidden' onClick={() => setSidebar(!sidebar)}>
-                    {sidebar ? <IoMdClose /> :<IoMdMenu />}
+                    {/* menu open and close icon */}
+                    <div className='text-4xl text-gray-900 hover:text-gray-700/90 cursor-pointer md:hidden' onClick={() => setSidebar(!sidebar)}>
+                        {sidebar ? <IoMdClose /> :<IoMdMenu />}
+                    </div>
                 </div>
             </div>
 
-            {/* cart and user logo */}
+            {/* cart and user logo and login btn */}
             <div className='flex items-center'>
                 {
                     session ? (
@@ -74,7 +77,7 @@ function NavBarOuter({session, user}) {
                     ) : (
                         <div className=''>
                             <Link href="/login" className=''>
-                                <button className='px-6 pb-1 bg-blue-400/60 rounded-[5px] hover:bg-blue-400 transition duration-300 text-gray-900 text-2xl font-semibold hover:text-gray-700/90'>
+                                <button className='px-8 py-1 pb-1.5  bg-blue-400/60 rounded-[5px] hover:bg-blue-400 transition duration-300 text-gray-900 text-xl font-medium hover:text-gray-700/90'>
                                     Login                        
                                 </button>                                
                             </Link>
