@@ -16,7 +16,7 @@ async function Category() {
         {
           categories.map((category) => (
             <div key={category.id} className=''>
-              <Link href={`products?category=${encodeURIComponent(category.name)}`} className='w-18 md:w-22 xl:w-26 2xl:w-30 h-full flex flex-col items-center justify-center p-2 space-y-2 lg:space-y-4 font-mono cursor-pointer hover:scale-110 transition duration-300'>
+              <Link href={`products?category=${encodeURIComponent(category.name)}`} className='w-18 md:w-22 xl:w-26 2xl:w-30 h-full flex flex-col items-center justify-center space-y-2 lg:space-y-4 font-mono cursor-pointer hover:scale-110 transition duration-300'>
                 <img 
                   src={category.image} 
                   alt={category.slug} 
