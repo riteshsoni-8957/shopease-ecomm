@@ -101,6 +101,7 @@ function Register() {
                         {/* Submit button */}
                         <button 
                             type='submit'
+                            disabled={isPending}
                             className='bg-blue-500/50 hover:bg-blue-400 w-full h-[35px] rounded-[10px] text-xl font-semibold pb-1'    
                         >
                             {isPending ? "Registered in..." : "Register"}

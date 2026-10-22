@@ -77,12 +77,9 @@ export const logoutAction = async () => {
 
 // register action
 export const registerAction = async (prevState, formData) => {
-    // const url = `${API_URL}/users`;
-    // const response = await axios.get(url);
-    // const users = response.data;
-
-    const users = getUsers();
+    const users = await getUsers();
     console.log("Register action called.....");
+    console.log("Users...", users);
 
     const newUser = {
         name: formData.get("name"),
