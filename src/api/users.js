@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const API_URL = "https://shopease-api-q3o2.onrender.com"
+const API_URL = process.env.NEXT_PUBLIC_API_URL
 
 // return All Users
 export const getUsers = async () => {

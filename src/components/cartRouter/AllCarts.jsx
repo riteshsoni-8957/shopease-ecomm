@@ -1,7 +1,7 @@
 "use client";
-import React, { useState } from 'react'
 import { ArrowRight, LockKeyhole2, Trash3 } from 'reicon-react';
 import Link from 'next/link';
+import { deleteCartAction } from '../../serverAction/auth';
 
 function AllCarts({carts}) {
     var quantity = 1;
@@ -91,9 +91,12 @@ function AllCarts({carts}) {
                                                     </div>
                                                 </div>
 
-                                                <div className='hover:scale-110 hover:text-red-400'>
-                                                    <Trash3 size={24} weight="Filled" />
-                                                </div>
+                                                <form action="">
+                                                    <button type='submit' className='hover:scale-110 hover:text-red-400'>
+                                                        <Trash3 size={24} weight="Filled" />
+                                                    </button>                                                
+                                                </form>
+
                                             </Link>
                                         )
                                     })

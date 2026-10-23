@@ -3,11 +3,11 @@ import axios from "axios";
 // import { error } from "console";
 import { deleteSession, getSession, setSession } from "../_lib/session";
 import { createUser, getUserById, getUsers, updateUser } from '../api/users';
-import { createCart } from '../api/carts';
+import { createCart, deleteCart } from '../api/carts';
 import { redirect } from "next/navigation";
 import { getProductById } from "@/api/products";
 
-const API_URL = "https://shopease-api-q3o2.onrender.com";
+const API_URL = process.env.NEXT_PUBLIC_API_URL
 
 // Login action
 export const loginAction = async (prevstate, formData) => {
@@ -202,4 +202,14 @@ export const cartAction = async (productId) => {
         throw new error;
     }
     redirect("/carts");
+}
+
+// delete carts
+export const deleteCartAction = async (id) => {
+    try {
+        console.log("cart delete action called....");
+        await deleteCart(id)
+    } catch (error) {
+        console.log("Error: ", error);
+    }
 }

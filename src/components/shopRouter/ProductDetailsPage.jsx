@@ -85,12 +85,12 @@ function ProductDetailsPage({user, product, products}) {
                         </button> 
                     </form>
 
-                    <button 
-                            type='submit'
-                            className='bg-gray-300 border border-gray-700 text-black font-semibold px-4 py-2 rounded-[5px] hover:bg-gray-300/50 transition duration-300'    
-                        >
-                            Buy Now
-                    </button>
+                    <Link 
+                        href={`/checkout/${product.productId}`}
+                        className='bg-gray-300 border border-gray-700 text-black font-semibold px-4 py-2 rounded-[5px] hover:bg-gray-300/50 transition duration-300 text-center'    
+                    >
+                        Buy Now
+                    </Link>
                 </div>
             </div>
 
