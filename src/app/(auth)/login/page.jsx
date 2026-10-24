@@ -1,14 +1,14 @@
 // it is server side routing
 import Link from 'next/link';
-import Login from "../../../components/auth/Login"
+import Login from "../../../components/auth/Login";
 
 export const metadata = {
 
 };
 
 function page() {
-  metadata.title = "Shop Ease - Login"
-  metadata.description = "Login "
+  metadata.title = "Login - Shop Ease";
+  metadata.description = "Log in to your Shop Ease account to access your profile, manage your shopping cart, and enjoy a convenient online shopping experience.";
 
   return (
     <div className='w-full min-[590px]:h-screen flex flex-col items-center justify-center bg-gray-200/10 px-6 py-6 min-[590px]:py-0'>

@@ -3,7 +3,7 @@ import Navbar from "../../../components/navbar/Navbar";
 import Footer from "../../../components/footer/Footer"
 import ProductDetailsPage from "../../../components/shopRouter/ProductDetailsPage";
 import { getProductById, getProducts } from "../../../api/products";
-import { deleteSession, getSession } from "../../../_lib/session";
+import { getSession } from "../../../_lib/session";
 import { getUserById } from "../../../api/users";
 import Link from "next/link";
 import DeleteInvalidSession from "../../../components/DeleteInvalidSession";
@@ -13,8 +13,8 @@ export const metadata = {
 };
 
 async function page({params}) {
-    metadata.title = "Shop Ease - Product details"
-    metadata.description = "Product details "
+    metadata.title = "Product Details - Shop Ease";
+    metadata.description = "Explore detailed product information at Shop Ease, including stylish fashion, men's and women's clothing, product features, and prices. Find the perfect products for your style.";
 
     const {pId} = await params;
     console.log("params id: ", pId);

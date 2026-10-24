@@ -57,7 +57,7 @@ function AllCarts({carts}) {
                                                 <img 
                                                     src={cart.images[0]} 
                                                     alt={cart.subcategory}
-                                                    className='w-15 h-15 min-[390px]:w-20 min-[390px]:h-20 min-[490px]:w-25 min-[490px]:h-25 md:w-15 md:h-15 object-cover object-center border-2 border-gray-200 rounded-xl overflow-hidden'
+                                                    className='w-15 h-15 min-[390px]:w-20 min-[390px]:h-20 min-[490px]:w-25 min-[490px]:h-25 md:w-15 md:h-15 object-cover object-top border-2 border-gray-200 rounded-xl overflow-hidden'
                                                 />
 
                                                 <div className='md:w-full flex flex-col md:flex-row gap-1 md:gap-10 lg:gap-6 xl:gap-20 2xl:gap-32'>

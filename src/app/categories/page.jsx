@@ -9,7 +9,14 @@ import { getUserById } from '../../api/users';
 import CategoryPage from '../../components/categoryRouter/CategoryPage';
 import DeleteInvalidSession from "../../components/DeleteInvalidSession";
 
+export const metadata = {
+
+};
+
 async function page() {
+    metadata.title = "Categories - Shop Ease";
+    metadata.description = "Explore fashion and lifestyle categories at Shop Ease. Discover men's and women's clothing, browse different styles, and find the right products for your needs.";
+
     const session = await getSession();
     const user = session ? await getUserById(session.id) : "";
     const categories = await getCategories();

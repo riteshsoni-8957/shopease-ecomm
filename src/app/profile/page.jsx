@@ -11,8 +11,8 @@ export const metadata = {
 };
 
 async function page() {
-    metadata.title = "Shop Ease - Profile"
-    metadata.description = "Profile "
+    metadata.title = "My Profile - Shop Ease";
+    metadata.description = "Manage your Shop Ease profile and account details. View your personal information and keep your account details up to date for a convenient online shopping experience.";
 
     const session = await getSession();
     const user = session ? await getUserById(session.id) : "";

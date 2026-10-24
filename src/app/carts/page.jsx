@@ -5,7 +5,14 @@ import Link from 'next/link';
 import Navbar from '../../components/navbar/Navbar';
 import CartPage from "../../components/cartRouter/CartPage";
 
+export const metadata = {
+
+};
+
 async function page() {
+    metadata.title = "Cart - Shop Ease";
+    metadata.description = "View and manage your shopping cart at Shop Ease. Review selected products, update quantities, and check your items before proceeding to checkout.";
+
     const session = await getSession();
     const carts = await getCartsByCartId(session?.id);
     console.log("carts by session id: ", carts);

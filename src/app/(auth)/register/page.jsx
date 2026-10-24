@@ -7,8 +7,8 @@ export const metadata = {
 };
 
 function page() {
-  metadata.title = "Shop Ease - Register"
-  metadata.description = "Register "
+  metadata.title = "Register - Shop Ease";
+  metadata.description = "Create your Shop Ease account to explore the latest fashion and lifestyle products, manage your shopping cart, and enjoy a convenient online shopping experience.";
 
   return (
     <div className='w-full min-[590px]:h-screen flex flex-col items-center justify-center bg-gray-200/10 px-6 py-6 min-[590px]:py-0'>

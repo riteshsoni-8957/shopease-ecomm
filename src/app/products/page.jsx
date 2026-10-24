@@ -12,8 +12,8 @@ export const metadata = {
 };
 
 async function page() {
-  metadata.title = "Shop Ease - Products"
-  metadata.description = "Products "
+  metadata.title = "Products - Shop Ease";
+  metadata.description = "Explore the latest fashion and lifestyle products at Shop Ease. Shop men's and women's clothing, discover stylish designs, and find quality products at great prices.";
 
   const session = await getSession();
   const user = session ? await getUserById(session.id) : "";
