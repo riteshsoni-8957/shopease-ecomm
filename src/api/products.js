@@ -1,15 +1,22 @@
 import axios from "axios";
+import { pool } from "../_lib/db"
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL
 
 
 // get all products
-export const getProducts = async() => {
-    const url = `${API_URL}/products`;
-    const response = await axios.get(url);
-    const products = response.data;
-    return products;
-}
+export const getProducts = async () => {
+    try {
+        const result = await pool.query(
+            "SELECT * FROM products ORDER BY id"
+        );
+
+        return result.rows;
+    } catch (error) {
+        console.log("get products error: ", error);
+        throw error;
+    }
+};
 
 
 // get product by Pid
