@@ -1,0 +1,602 @@
+
+-- AIVEN DATABASE SERVICE: PRODUCTS
+
+
+-- 1. Create products table
+CREATE TABLE IF NOT EXISTS public.products (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    "productId" TEXT UNIQUE NOT NULL,
+    name TEXT NOT NULL,
+    slug TEXT NOT NULL,
+    category TEXT,
+    subcategory TEXT,
+    brand TEXT,
+    description TEXT,
+    price NUMERIC(10, 2) NOT NULL DEFAULT 0,
+    "originalPrice" NUMERIC(10, 2) DEFAULT 0,
+    discount NUMERIC(5, 2) DEFAULT 0,
+    rating NUMERIC(3, 2) DEFAULT 0,
+    reviews INTEGER DEFAULT 0,
+    stock INTEGER DEFAULT 0,
+    sku TEXT UNIQUE,
+    images JSONB DEFAULT '[]'::jsonb,
+    colors JSONB DEFAULT '[]'::jsonb,
+    sizes JSONB DEFAULT '[]'::jsonb,
+    features JSONB DEFAULT '[]'::jsonb,
+    tags JSONB DEFAULT '[]'::jsonb,
+    "isFeatured" BOOLEAN DEFAULT FALSE,
+    "isNew" BOOLEAN DEFAULT FALSE,
+    "isBestSeller" BOOLEAN DEFAULT FALSE
+);
+
+
+-- 2. Insert product
+
+INSERT INTO public.products (
+    "productId",
+    name,
+    slug,
+    category,
+    subcategory,
+    brand,
+    description,
+    price,
+    "originalPrice",
+    discount,
+    rating,
+    reviews,
+    stock,
+    sku,
+    images,
+    colors,
+    sizes,
+    features,
+    tags,
+    "isFeatured",
+    "isNew",
+    "isBestSeller"
+)
+VALUES
+(
+    'P001',
+    'Classic Cotton T-Shirt',
+    'classic-cotton-t-shirt',
+    'Men',
+    'T-Shirts',
+    'UrbanStyle',
+    'Experience everyday comfort and timeless style with the Classic Cotton T-Shirt by UrbanStyle. Crafted from 100% premium cotton, this t-shirt offers a soft, breathable feel that keeps you comfortable throughout the day. Its regular fit provides a relaxed and versatile look, making it perfect for casual outings, college, travel, or daily wear. Available in Black, White, and Blue, it pairs effortlessly with jeans, joggers, or shorts. Enjoy lasting comfort and effortless style with this wardrobe essential. Upgrade your everyday look today and order now before your favorite size sells out!',
+    599,
+    899,
+    33,
+    4.5,
+    128,
+    45,
+    'US-MTS-001',
+    '["https://m.media-amazon.com/images/I/71MzfNXNdlL._AC_UY1100_.jpg"]'::jsonb,
+    '["Black", "White", "Blue"]'::jsonb,
+    '["S", "M", "L", "XL"]'::jsonb,
+    '["100% Cotton", "Regular Fit", "Machine Washable"]'::jsonb,
+    '["casual", "cotton", "men"]'::jsonb,
+    TRUE,
+    FALSE,
+    TRUE
+),
+(
+    'P002',
+    'Slim Fit Denim Jeans',
+    'slim-fit-denim-jeans',
+    'Men',
+    'Jeans',
+    'DenimCraft',
+    'Upgrade your wardrobe with Slim Fit Denim Jeans by DenimCraft, designed for a modern look and all-day comfort. Crafted from premium stretch denim, these jeans offer flexibility and a comfortable fit that moves with you. Their stylish slim-fit design makes them perfect for casual outings, college, travel, or everyday wear. Available in classic Blue and Black, they pair effortlessly with t-shirts, shirts, and sneakers. With fade-resistant fabric and versatile styling, these jeans are a must-have. Elevate your style today and order now before your preferred size sells out!',
+    1299,
+    1899,
+    32,
+    4.6,
+    214,
+    32,
+    'DC-MJ-002',
+    '["https://rukminim3.flixcart.com/image/316/420/xif0q/jean/d/3/p/-original-imahpz8tgdsmhpsy.jpeg?q=80&crop=false"]'::jsonb,
+    '["Blue", "Black"]'::jsonb,
+    '["30", "32", "34", "36", "38"]'::jsonb,
+    '["Stretch Denim", "Slim Fit", "Fade Resistant"]'::jsonb,
+    '["jeans", "denim", "men"]'::jsonb,
+    TRUE,
+    FALSE,
+    TRUE
+),
+(
+    'P003',
+    'Men Casual Shirt',
+    'men-casual-shirt',
+    'Men',
+    'Shirts',
+    'StyleHub',
+    'Upgrade your everyday wardrobe with the Men Casual Shirt by StyleHub, designed for effortless style and lasting comfort. Crafted from soft, breathable fabric, this shirt keeps you comfortable throughout the day. Its regular fit offers a relaxed, flattering look, making it perfect for college, office casuals, weekend outings, or everyday wear. Available in Green, White, and Navy, it pairs easily with jeans, chinos, and trousers. Refresh your style with this versatile essential. Shop now and make every casual outfit look effortlessly stylish!',
+    899,
+    1299,
+    31,
+    4.3,
+    96,
+    28,
+    'SH-MCS-003',
+    '["https://imagescdn.louisphilippe.com/img/app/product/4/40225552-25107793.jpg"]'::jsonb,
+    '["Green", "White", "Navy"]'::jsonb,
+    '["S", "M", "L", "XL"]'::jsonb,
+    '["Soft Fabric", "Regular Fit", "Breathable"]'::jsonb,
+    '["shirt", "casual", "men"]'::jsonb,
+    FALSE,
+    TRUE,
+    FALSE
+),
+(
+    'P004',
+    'Oversized Graphic T-Shirt',
+    'oversized-graphic-t-shirt',
+    'Men',
+    'T-Shirts',
+    'StreetWear',
+    'Express your unique style with the Oversized Graphic T-Shirt by StreetWear, designed for modern streetwear lovers. Made from premium cotton, this t-shirt offers a soft, breathable feel for all-day comfort. Its relaxed oversized fit and eye-catching graphic print create a trendy look for college, outings, travel, or casual hangouts. Available in Black, Grey, and White, it pairs perfectly with jeans, cargos, and sneakers. Upgrade your streetwear collection today and order now to give your everyday outfits a bold, stylish upgrade!',
+    699,
+    999,
+    30,
+    4.7,
+    185,
+    52,
+    'SW-OGT-004',
+    '["https://assets.myntassets.com/w_200,q_50,,dpr_3,fl_progressive,f_webp/assets/images/2025/DECEMBER/29/LkTNGmWa_2b73a923d2a142f49a353da811f27a37.jpg"]'::jsonb,
+    '["Black", "Grey", "White"]'::jsonb,
+    '["M", "L", "XL", "XXL"]'::jsonb,
+    '["Oversized Fit", "Graphic Print", "Premium Cotton"]'::jsonb,
+    '["oversized", "streetwear", "men"]'::jsonb,
+    TRUE,
+    TRUE,
+    TRUE
+),
+(
+    'P005',
+    'Men Formal Blazer',
+    'men-formal-blazer',
+    'Men',
+    'Blazers',
+    'GentleMan',
+    'Make a lasting impression with the Men Formal Blazer by GentleMan, designed for confidence and sophistication. Crafted from premium fabric, this blazer offers a polished appearance suitable for professional meetings, weddings, parties, and special occasions. Its slim-fit design creates a sharp silhouette while complementing formal shirts and tailored trousers. Available in Black, Navy, and Grey, it adds versatility to your wardrobe. Elevate your formal style and stand out at every important event. Order your preferred blazer today and dress with confidence!',
+    2499,
+    3499,
+    29,
+    4.5,
+    74,
+    18,
+    'GM-MB-005',
+    '["https://rukminim2.flixcart.com/image/316/420/xif0q/blazer/j/n/o/34-z3-blu-zavy-fashion-original-imahpkrmzskdxhac.jpeg?q=80&crop=false"]'::jsonb,
+    '["Black", "Navy", "Grey"]'::jsonb,
+    '["S", "M", "L", "XL"]'::jsonb,
+    '["Premium Fabric", "Slim Fit", "Formal Design"]'::jsonb,
+    '["blazer", "formal", "men"]'::jsonb,
+    TRUE,
+    FALSE,
+    FALSE
+),
+(
+    'P006',
+    'Floral Dress',
+    'women-floral-dress',
+    'Women',
+    'Dresses',
+    'Elegance',
+    'Refresh your wardrobe with the Floral Dress by Elegance, designed to bring effortless charm to your everyday style. Featuring a beautiful floral print and lightweight fabric, this dress offers comfortable wear and a graceful appearance. Its comfort-fit design makes it ideal for brunches, holidays, casual outings, parties, and weekend gatherings. Available in Pink, Blue, and Yellow, it is easy to style with sandals, flats, or your favorite accessories. Add a fresh, feminine touch to your collection today. Shop now and find your perfect look!',
+    1199,
+    1699,
+    29,
+    4.6,
+    142,
+    35,
+    'EL-WFD-006',
+    '["https://www.missmosa.in/cdn/shop/files/Hannah_Floral_Maxi_Dress_3.jpg?format=webp&v=1783687939&width=500"]'::jsonb,
+    '["Pink", "Blue", "Yellow"]'::jsonb,
+    '["S", "M", "L", "XL"]'::jsonb,
+    '["Floral Print", "Lightweight", "Comfort Fit"]'::jsonb,
+    '["dress", "floral", "women"]'::jsonb,
+    TRUE,
+    TRUE,
+    TRUE
+),
+(
+    'P007',
+    'Oversized Hoodie',
+    'women-oversized-hoodie',
+    'Women',
+    'Hoodies',
+    'CozyWear',
+    'Stay cozy and stylish with the Oversized Hoodie by CozyWear, a perfect addition to your casual wardrobe. Designed with a warm fleece interior, this hoodie provides a soft feel and extra comfort on chilly days. Its relaxed oversized fit creates a laid-back look that works well for college, travel, lounging, and everyday outings. Available in Black, Cream, and Grey, it pairs effortlessly with jeans, leggings, and joggers. Bring comfort and modern street style together this season. Shop your favorite color today and upgrade your winter wardrobe!',
+    999,
+    1499,
+    33,
+    4.4,
+    89,
+    41,
+    'CW-WH-007',
+    '["https://img.tatacliq.com/images/i29/437Wx649H/MP000000029665137_437Wx649H_202601022359581.jpeg"]'::jsonb,
+    '["Black", "Cream", "Grey"]'::jsonb,
+    '["S", "M", "L", "XL"]'::jsonb,
+    '["Fleece Interior", "Oversized Fit", "Warm"]'::jsonb,
+    '["hoodie", "winter", "women"]'::jsonb,
+    FALSE,
+    TRUE,
+    FALSE
+),
+(
+    'P008',
+    'High Waist Jeans',
+    'women-high-waist-jeans',
+    'Women',
+    'Jeans',
+    'DenimCraft',
+    'Discover a flattering everyday style with High Waist Jeans by DenimCraft, designed for a modern and confident look. The high-waist design pairs with a stylish slim fit to create a versatile silhouette, while stretch fabric offers flexibility and comfortable movement. Perfect for college, shopping, casual outings, and weekend plans, these jeans complement crop tops, shirts, t-shirts, and sneakers. Available in classic Blue and Black, they make outfit styling simple and effortless. Refresh your denim collection today and order your preferred size for a stylish everyday look!',
+    1399,
+    1999,
+    30,
+    4.5,
+    167,
+    29,
+    'DC-WJ-008',
+    '["https://m.media-amazon.com/images/I/91IpcfmzexL._AC_UY1100_.jpg"]'::jsonb,
+    '["Blue", "Black"]'::jsonb,
+    '["26", "28", "30", "32", "34"]'::jsonb,
+    '["High Waist", "Stretch Fabric", "Slim Fit"]'::jsonb,
+    '["jeans", "denim", "women"]'::jsonb,
+    TRUE,
+    FALSE,
+    TRUE
+),
+(
+    'P009',
+    'Running Sneakers',
+    'running-sneakers',
+    'Footwear',
+    'Sneakers',
+    'SportX',
+    'Take every step with confidence in Running Sneakers by SportX, designed for active lifestyles and everyday movement. Featuring a cushioned sole, lightweight construction, and breathable mesh, these sneakers offer comfortable support during walks, workouts, jogging, and daily activities. Their sporty design makes them easy to pair with track pants, shorts, and casual outfits. Available in Black, White, and Red, they combine versatile styling with an athletic appearance. Upgrade your footwear collection today and order your preferred size to step into comfort and style!',
+    1799,
+    2499,
+    28,
+    4.6,
+    234,
+    36,
+    'SX-RS-009',
+    '["https://m.media-amazon.com/images/I/61W5EUtNJrL._AC_UY1000_.jpg"]'::jsonb,
+    '["Black", "White", "Red"]'::jsonb,
+    '["7", "8", "9", "10", "11"]'::jsonb,
+    '["Cushioned Sole", "Lightweight", "Breathable Mesh"]'::jsonb,
+    '["shoes", "running", "sports"]'::jsonb,
+    TRUE,
+    TRUE,
+    TRUE
+),
+(
+    'P010',
+    'Classic White Sneakers',
+    'classic-white-sneakers',
+    'Footwear',
+    'Sneakers',
+    'WalkPro',
+    'Complete your everyday outfits with Classic White Sneakers by WalkPro, designed for clean styling and versatile comfort. Their timeless design pairs effortlessly with jeans, chinos, dresses, and casual wear, making them suitable for college, shopping, travel, and weekend outings. Featuring a durable rubber sole and easy-clean finish, these sneakers are practical for regular use while maintaining a fresh appearance. Available in White and Black, they offer simple styling options for different looks. Give your footwear collection a timeless upgrade today. Shop now and step out in effortless style!',
+    1499,
+    2199,
+    32,
+    4.5,
+    198,
+    42,
+    'WP-CWS-010',
+    '["https://rukminim3.flixcart.com/image/260/260/xif0q/shoe/o/l/p/7-sd9117g-7-sparx-white-original-imahqy5uafbsumrb.jpeg?q=80&crop=false"]'::jsonb,
+    '["White", "Black"]'::jsonb,
+    '["6", "7", "8", "9", "10", "11"]'::jsonb,
+    '["Rubber Sole", "Casual Design", "Easy Clean"]'::jsonb,
+    '["sneakers", "casual", "footwear"]'::jsonb,
+    TRUE,
+    FALSE,
+    TRUE
+),
+(
+    'P011',
+    'Premium Sunglasses',
+    'premium-sunglasses',
+    'Accessories',
+    'Sunglasses',
+    'VisionPro',
+    'Elevate your everyday style with Premium Sunglasses by VisionPro, designed for a fashionable look and comfortable wear. Featuring UV protection lenses, these sunglasses help protect your eyes from harmful ultraviolet rays during outdoor activities. Their polarized lenses help reduce glare, while the lightweight frame offers comfortable wear throughout the day. Available in classic Black and Brown, they complement casual outfits, travel looks, and weekend adventures. Complete your look with a stylish accessory that combines fashion and function. Shop VisionPro sunglasses today and step out with confidence!',
+    799,
+    1199,
+    33,
+    4.4,
+    93,
+    44,
+    'VP-PS-011',
+    '["https://www.rkumar.in/cdn/shop/files/IDS3381C3PSG_1.jpg?v=1776857243&width=1100"]'::jsonb,
+    '["Black", "Brown"]'::jsonb,
+    '["One Size"]'::jsonb,
+    '["UV Protection", "Polarized Lens", "Lightweight Frame"]'::jsonb,
+    '["sunglasses", "fashion", "accessories"]'::jsonb,
+    TRUE,
+    FALSE,
+    FALSE
+),
+(
+    'P012',
+    'Classic Analog Watch',
+    'classic-analog-watch',
+    'Accessories',
+    'Watches',
+    'TimeCraft',
+    'Add timeless elegance to your everyday look with the Classic Analog Watch by TimeCraft. Designed with a premium metal finish, this watch brings a refined touch to both formal and casual outfits. Its reliable quartz movement helps keep time accurately, while the stainless steel construction offers a sophisticated appearance. The water-resistant design adds everyday practicality, making it suitable for work, meetings, celebrations, and daily wear. Available in Black, Silver, and Gold, it complements different personal styles. Upgrade your accessories collection today and order your favorite finish!',
+    1599,
+    2299,
+    30,
+    4.5,
+    154,
+    25,
+    'TC-AW-012',
+    '["https://media.meggfashion.in/products/c340e61d-0820-4d5f-b2cd-6b7170bd65ae/1776775583054_0.webp"]'::jsonb,
+    '["Black", "Silver", "Gold"]'::jsonb,
+    '["One Size"]'::jsonb,
+    '["Quartz Movement", "Water Resistant", "Stainless Steel"]'::jsonb,
+    '["watch", "fashion", "accessories"]'::jsonb,
+    TRUE,
+    FALSE,
+    TRUE
+),
+(
+    'P013',
+    'Wireless Bluetooth Headphones',
+    'wireless-bluetooth-headphones',
+    'Electronics',
+    'Headphones',
+    'SoundMax',
+    'Enjoy your favorite music with Wireless Bluetooth Headphones by SoundMax, designed for immersive listening and everyday convenience. Experience deep bass and clear audio while enjoying the freedom of wireless connectivity. Bluetooth 5.3 provides convenient pairing with compatible devices, while the impressive 40-hour battery life helps keep your music going longer between charges. Noise reduction helps minimize unwanted background sounds for a more enjoyable listening experience. Available in Black and White, these headphones suit travel, work, study, and entertainment. Upgrade your audio experience today and order your SoundMax headphones!',
+    2499,
+    3499,
+    29,
+    4.7,
+    341,
+    27,
+    'SM-WBH-013',
+    '["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKSMNorBCykoBPA1TwAIj4tyqlzbzIQohfHQHT80qKqA&s"]'::jsonb,
+    '["Black", "White"]'::jsonb,
+    '["One Size"]'::jsonb,
+    '["Bluetooth 5.3", "40 Hour Battery", "Noise Reduction"]'::jsonb,
+    '["headphones", "wireless", "electronics"]'::jsonb,
+    TRUE,
+    TRUE,
+    TRUE
+),
+(
+    'P014',
+    'Smart Watch Pro',
+    'smart-watch-pro',
+    'Electronics',
+    'Smart Watches',
+    'TechFit',
+    'Stay connected and keep track of your daily activity with Smart Watch Pro by TechFit. Designed for modern lifestyles, this smartwatch combines useful fitness features with convenient smart notifications. Monitor your heart rate, track sleep patterns, and stay updated with Bluetooth calling from your wrist when connected to a compatible smartphone. Its versatile design makes it suitable for workouts, office hours, travel, and everyday activities. Available in Black and Silver, it complements both sporty and casual outfits. Make your daily routine smarter today and order Smart Watch Pro to upgrade your wearable technology!',
+    2999,
+    4499,
+    33,
+    4.6,
+    287,
+    22,
+    'TF-SWP-014',
+    '["https://image.made-in-china.com/202f0j00jsNlmIqWPhoS/Wearfit-PRO-Low-Energy-Bt-Call-Smartwatch-1-78-Inches-3D-Curved-Screen-Online-Smart-Watch-with-Intelligent-Split-Screen-Function.jpg"]'::jsonb,
+    '["Black", "Silver"]'::jsonb,
+    '["One Size"]'::jsonb,
+    '["Heart Rate Monitor", "Sleep Tracking", "Bluetooth Calling"]'::jsonb,
+    '["smartwatch", "fitness", "electronics"]'::jsonb,
+    TRUE,
+    TRUE,
+    TRUE
+),
+(
+    'P015',
+    'Mechanical Gaming Keyboard',
+    'mechanical-gaming-keyboard',
+    'Electronics',
+    'Computer Accessories',
+    'GameCore',
+    'Level up your gaming setup with the Mechanical Gaming Keyboard by GameCore, built for responsive control and immersive gameplay. Its mechanical switches deliver tactile keystrokes, while RGB lighting adds a dynamic look to your desk. Anti-ghosting technology helps register multiple key presses during fast-paced gaming sessions. The versatile design also works well for typing, studying, and everyday computer use. Available in Black and White, this keyboard fits a variety of gaming and workstation setups. Upgrade your desk and gaming experience today. Order your GameCore keyboard and get ready for your next session!',
+    1899,
+    2799,
+    32,
+    4.7,
+    231,
+    16,
+    'GC-MGK-015',
+    '["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7Q9Gfdzpk08eeHSLGdCbbwkA99Ge3rfv9PAZlomC0OYEkgZ6W_UdxOrc&s=10"]'::jsonb,
+    '["Black", "White"]'::jsonb,
+    '["Full Size"]'::jsonb,
+    '["Mechanical Switches", "RGB Lighting", "Anti-Ghosting"]'::jsonb,
+    '["keyboard", "gaming", "electronics"]'::jsonb,
+    TRUE,
+    FALSE,
+    TRUE
+),
+(
+    'P016',
+    'Ceramic Coffee Mug',
+    'ceramic-coffee-mug',
+    'Home & Living',
+    'Kitchen',
+    'HomeNest',
+    'Make every coffee or tea break special with the Ceramic Coffee Mug by HomeNest. Crafted from ceramic, this mug offers a simple, stylish design that fits comfortably into your daily routine. Its 350ml capacity is suitable for your favorite hot beverages at home, in the office, or during study sessions. The heat-resistant construction supports everyday use, while the dishwasher-safe design makes cleaning convenient. Available in White, Black, and Blue, it also makes a thoughtful gift for friends and family. Bring a little extra comfort to your daily routine. Order your favorite mug today!',
+    299,
+    499,
+    40,
+    4.4,
+    87,
+    80,
+    'HN-CCM-016',
+    '["https://m.media-amazon.com/images/I/61OYo5mIOpL.jpg"]'::jsonb,
+    '["White", "Black", "Blue"]'::jsonb,
+    '["350ml"]'::jsonb,
+    '["Ceramic", "Dishwasher Safe", "Heat Resistant"]'::jsonb,
+    '["mug", "kitchen", "home"]'::jsonb,
+    FALSE,
+    TRUE,
+    FALSE
+),
+(
+    'P017',
+    'Modern Table Lamp',
+    'modern-table-lamp',
+    'Home & Living',
+    'Lighting',
+    'HomeNest',
+    'Create a warm and inviting atmosphere with the Modern Table Lamp by HomeNest. Its minimalist design adds a stylish touch to bedrooms, study tables, living rooms, and office desks. Designed for use with compatible LED bulbs, this lamp offers a practical lighting solution for reading, working, or relaxing in the evening. Its versatile Black and White color options blend easily with contemporary and classic interiors. Whether you are refreshing your workspace or decorating your home, this lamp combines simplicity with everyday functionality. Brighten your favorite corner today and order yours to complete your space!',
+    899,
+    1299,
+    31,
+    4.5,
+    63,
+    26,
+    'HN-MTL-017',
+    '["https://i.etsystatic.com/43745484/r/il/03e726/6750679610/il_1080xN.6750679610_j6e7.jpg"]'::jsonb,
+    '["White", "Black"]'::jsonb,
+    '["Medium"]'::jsonb,
+    '["LED Compatible", "Minimal Design", "Energy Efficient"]'::jsonb,
+    '["lamp", "lighting", "home"]'::jsonb,
+    TRUE,
+    FALSE,
+    FALSE
+),
+(
+    'P018',
+    'Vitamin C Face Serum',
+    'vitamin-c-face-serum',
+    'Beauty',
+    'Skincare',
+    'GlowCare',
+    'Refresh your skincare routine with Vitamin C Face Serum by GlowCare, designed to support a brighter, fresher-looking complexion. Its lightweight texture fits easily into your daily skincare routine without feeling heavy on the skin. The formula features Vitamin C, a popular skincare ingredient used to improve the appearance of uneven skin tone and dullness. Packaged in a convenient 30ml size, it is easy to incorporate into your morning or evening routine. Choose consistent skincare that suits your needs and always patch-test new products. Give your routine a fresh start and shop GlowCare serum today!',
+    699,
+    999,
+    30,
+    4.6,
+    218,
+    54,
+    'GC-VCS-018',
+    '["https://images.pexels.com/photos/28255124/pexels-photo-28255124/free-photo-of-c-vitamin-serum.jpeg?auto=compress&w=1260&h=750&dpr=1"]'::jsonb,
+    '[]'::jsonb,
+    '["30ml"]'::jsonb,
+    '["Vitamin C", "Lightweight", "Daily Use"]'::jsonb,
+    '["serum", "skincare", "beauty"]'::jsonb,
+    TRUE,
+    FALSE,
+    TRUE
+),
+(
+    'P019',
+    'Travel Duffel Bag',
+    'travel-duffel-bag',
+    'Travel',
+    'Travel Bags',
+    'TravelPro',
+    'Pack smarter for your next adventure with the Travel Duffel Bag by TravelPro. Designed with a spacious interior, this bag offers room for clothing, toiletries, and other travel essentials for weekend trips and short getaways. Its water-resistant construction helps protect your belongings from light moisture, while multiple pockets make organizing smaller items easier. Available in Black, Grey, and Blue, it combines practical storage with a versatile travel-ready look. Whether you are heading to the gym or planning a quick escape, this duffel bag is ready to go. Order yours today and prepare for your next trip!',
+    1199,
+    1799,
+    33,
+    4.5,
+    109,
+    31,
+    'TP-TDB-019',
+    '["https://rukmini1.flixcart.com/image/300/300/xif0q/duffel-bag/p/c/f/13-combo-pack-2-travel-pro-wheeled-duffel-bags-smrt-combo-2-original-imahgxf67aup9ezz.jpeg"]'::jsonb,
+    '["Black", "Grey", "Blue"]'::jsonb,
+    '["Large"]'::jsonb,
+    '["Large Capacity", "Water Resistant", "Multiple Pockets"]'::jsonb,
+    '["travel", "bag", "duffel"]'::jsonb,
+    TRUE,
+    TRUE,
+    FALSE
+),
+(
+    'P020',
+    'Premium Yoga Mat',
+    'premium-yoga-mat',
+    'Sports',
+    'Fitness Accessories',
+    'FitLife',
+    'Build a more comfortable workout routine with the Premium Yoga Mat by FitLife. Designed with a non-slip surface, this 6mm mat provides a supportive base for yoga, stretching, meditation, and home fitness sessions. Its eco-friendly design makes it a practical addition to your regular exercise essentials, while the included carry strap helps you transport it conveniently. Available in Black, Purple, Blue, and Green, it suits a range of personal styles. Create your own comfortable workout space at home or on the go. Upgrade your fitness essentials today and order your FitLife yoga mat!',
+    899,
+    1299,
+    31,
+    4.7,
+    194,
+    46,
+    'FL-YMP-020',
+    '["https://m.media-amazon.com/images/I/71f1Oz0x1KL._AC_UF894,1000_QL80_.jpg"]'::jsonb,
+    '["Black", "Purple", "Blue", "Green"]'::jsonb,
+    '["6mm"]'::jsonb,
+    '["Non-Slip", "Eco Friendly", "Easy Carry Strap"]'::jsonb,
+    '["yoga", "fitness", "sports"]'::jsonb,
+    TRUE,
+    TRUE,
+    TRUE
+)
+ON CONFLICT ("productId") DO NOTHING;
+
+-- Verify inserted products
+SELECT * FROM public.products ORDER BY id;
+
+-- Count products
+SELECT COUNT(*) AS total_products FROM public.products;
+
+
+
+-- 3. Give permissions to shopease_admin
+
+GRANT USAGE ON SCHEMA public TO shopease_admin;
+
+GRANT SELECT, INSERT, UPDATE, DELETE
+ON TABLE public.products
+TO shopease_admin;
+
+GRANT USAGE, SELECT, UPDATE
+ON ALL SEQUENCES IN SCHEMA public
+TO shopease_admin;
+
+
+-- 4. Select all products
+
+SELECT * FROM public.products;
+
+
+-- 5. Find product by ID
+
+SELECT * FROM public.products
+WHERE id = 1;
+
+
+-- 6. Find product by productId
+
+SELECT * FROM public.products
+WHERE "productId" = 'P001';
+
+
+-- 7. Update product
+
+UPDATE public.products
+SET
+    price = 699,
+    stock = 50
+WHERE "productId" = 'P001';
+
+
+-- 8. Delete product where id = 1
+
+DELETE FROM public.products
+WHERE id = 1;
+
+
+-- 9. Delete all rows from products
+
+DELETE FROM public.products;
+
+
+-- 10. Drop products table completely
+
+DROP TABLE IF EXISTS public.products;

@@ -15,9 +15,9 @@ function AllCarts({carts}) {
     //     }
     // }
 
-    let totalPrice = 0;
+    var totalPrice = 0;
     carts.map((cart) => {
-        totalPrice += cart.price;
+        totalPrice += Number(cart.price);
     })
 
     console.log("Total cart price:.. ", totalPrice);
@@ -49,18 +49,19 @@ function AllCarts({carts}) {
                                 {
                                     carts.map((cart) => {
                                         return (
-                                            <Link 
+                                            <div 
                                                 key={cart.id} 
-                                                href={`products/${cart.productId}`}
                                                 className='flex flex-row items-center gap-4 min-[490px]:gap-10 min-[590px]:gap-16 md:gap-2 border-b border-gray-300 py-4'
                                             >
-                                                <img 
-                                                    src={cart.images[0]} 
-                                                    alt={cart.subcategory}
-                                                    className='w-15 h-15 min-[390px]:w-20 min-[390px]:h-20 min-[490px]:w-25 min-[490px]:h-25 md:w-15 md:h-15 object-cover object-top border-2 border-gray-200 rounded-xl overflow-hidden'
-                                                />
+                                                <Link href={`products/${cart.productId}`}>
+                                                    <img 
+                                                        src={cart.images[0]} 
+                                                        alt={cart.subcategory}
+                                                        className='w-15 h-15 min-[390px]:w-20 min-[390px]:h-20 min-[490px]:w-25 min-[490px]:h-25 md:w-15 md:h-15 object-cover object-top border-2 border-gray-200 rounded-xl overflow-hidden'
+                                                    />                                                
+                                                </Link>
 
-                                                <div className='md:w-full flex flex-col md:flex-row gap-1 md:gap-10 lg:gap-6 xl:gap-20 2xl:gap-32'>
+                                                <Link href={`products/${cart.productId}`} className='md:w-full flex flex-col md:flex-row gap-1 md:gap-10 lg:gap-6 xl:gap-20 2xl:gap-32'>
                                                     <div className='w-fit flex flex-col'>
                                                         <h1 className='whitespace-nowrap text-[16px] min-[390px]:text-lg min-[590px]:text-2xl md:text-[16px] lg:text-[12px] font-bold truncate md:w-35'>
                                                             {cart.name}
@@ -89,15 +90,14 @@ function AllCarts({carts}) {
                                                             ₹ {cart.price}
                                                         </h1>                                        
                                                     </div>
-                                                </div>
+                                                </Link>
 
-                                                <form action="">
+                                                <form action={deleteCartAction.bind(null, cart.id)}>
                                                     <button type='submit' className='hover:scale-110 hover:text-red-400'>
                                                         <Trash3 size={24} weight="Filled" />
                                                     </button>                                                
                                                 </form>
-
-                                            </Link>
+                                            </div>
                                         )
                                     })
                                 }            

@@ -187,13 +187,20 @@ export const updateUserAction = async (formData) => {
 export const cartAction = async (productId) => {
     try {
         const session = await getSession();
+
+        if (!session?.id) {
+            redirect("/login");
+        }
+
         const product = await getProductById(productId);
-        console.log("cart action called......")
-        console.log("product by cart.......", product);
+
+        if (!product) {
+            throw new Error("Product not found");
+        }
 
         const newCart = {
-            cartId : session?.id,
-            productId: productId,
+            cartId: session.id,
+            productId: product.productId,
             name: product.name,
             slug: product.slug,
             category: product.category,
@@ -207,25 +214,26 @@ export const cartAction = async (productId) => {
             reviews: product.reviews,
             stock: product.stock,
             sku: product.sku,
-            images: product.images.map((image) => image),
-            colors: product.colors.map((color) => color),
-            sizes: product.sizes.map((size) => size),
-            features: product.features.map((feature) => feature),
-            tags: product.tags.map((tag) => tag),
-            isFeatured: true,
-            isNew: true,
-            isBestSeller: true
-        }
-
-        console.log("New cart product: ", newCart);
+            images: product.images || [],
+            colors: product.colors || [],
+            sizes: product.sizes || [],
+            features: product.features || [],
+            tags: product.tags || [],
+            isFeatured: product.isFeatured,
+            isNew: product.isNew,
+            isBestSeller: product.isBestSeller,
+            quantity: 1
+        };
 
         await createCart(newCart);
+
     } catch (error) {
-        console.log("error: ", error);
-        throw new error;
+        console.log("cartAction error:", error.message);
+        throw error;
     }
+
     redirect("/carts");
-}
+};
 
 // delete carts
 export const deleteCartAction = async (id) => {
@@ -233,6 +241,8 @@ export const deleteCartAction = async (id) => {
         console.log("cart delete action called....");
         await deleteCart(id)
     } catch (error) {
-        console.log("Error: ", error);
+        console.log("deleteCartAction error: ", error.message);
+        throw error;
     }
+    redirect("/carts");
 }
