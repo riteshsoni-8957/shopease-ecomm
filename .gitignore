@@ -45,3 +45,5 @@ next-env.d.ts
 
 # sql
 /product-sql-query.sql
+/users-sql-query.sql
+/categories-sql-query.sql

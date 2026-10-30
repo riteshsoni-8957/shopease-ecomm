@@ -38,7 +38,7 @@ function ProductDetailsPage({user, product, products}) {
                     </h1>
 
                     <p className='text-lg lg:text-xl xl:text-2xl font-semibold font-serif'>
-                        ₹{product.price.toFixed(2)}
+                        ₹{product.price}
                     </p>
 
                     <p className='lg:text-lg xl:text-xl text-gray-600 font-serif'>

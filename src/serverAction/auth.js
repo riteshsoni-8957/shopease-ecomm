@@ -1,62 +1,52 @@
 "use server";
-import axios from "axios";
-// import { error } from "console";
-import { deleteSession, getSession, setSession } from "../_lib/session";
-import { createUser, getUserById, getUsers, updateUser } from '../api/users';
+import { setSession, deleteSession, getSession } from "../_lib/session";   //loginAction,  logoutAction,  updateUserAction
+import { createUser, getUserById, updateUser } from '../api/users';   //registerAction,  updateUserAction,  updateUserAction
 import { createCart, deleteCart } from '../api/carts';
 import { redirect } from "next/navigation";
 import { getProductById } from "@/api/products";
+import { pool } from "../_lib/db";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL
 
 // Login action
-export const loginAction = async (prevstate, formData) => {
+export const loginAction = async (prevState, formData) => {
+    const email = formData.get("email")?.trim().toLowerCase();
+    const password = formData.get("password");
+
+    if (!email || !password) {
+        return {
+            error: "Email and password are required."
+        };
+    }
+
     try {
-        // const email = formData.get("email");
-        // const password = formData.get("password");
+        const result = await pool.query(
+            `SELECT * FROM users
+            WHERE email = $1
+            LIMIT 1`,
+            [email]
+        );
 
-        console.log("Input email: ", formData.get("email"));
-        console.log("Input password: ", formData.get("password"));
-
-        const url = `${API_URL}/users?email=${formData.get("email")}&password=${formData.get("password")}`;
-        const response = await axios.get(url);
-
-        const user = response.data[0];
-
-        console.log("Login action called....")
-        console.log("url: ", url);
-        console.log("user...", user);
-
-
-        console.log("url: ", url);
-        console.log("response: ", response);
+        const user = result.rows[0];
         console.log("user: ", user);
 
-        if (!user) {
+        if (!user || user.password !== password) {
             return {
                 error: "Invalid Credential"
-            };   // throw ke niche ka code nahi chalta matlab ye code chalne par niche ka code nahi chalega 
-        }     
+            };
+        }
 
-        await setSession(
-            {
-                name: user.name, 
-                email: user.email, 
-                id: user.id
-            }
-        )
+        await setSession({
+            name: user.name,
+            email: user.email,
+            id: user.id
+        });
 
     } catch (error) {
-        // if(error.response?.status === 404) {
-        //     return {
-        //         error: "Invalid Credential"
-        //     }      
-        // }
-        // console.log("Login error: ", error.message);
-        
-        // return {
-        //     error: "Something went wrong. Please try again."
-        // }
+        console.error("Login error:", error.message);
+
+        return {
+            error: "Something went wrong. Please try again."
+        };
     }
 
     redirect("/");
@@ -77,14 +67,24 @@ export const logoutAction = async () => {
 
 // register action
 export const registerAction = async (prevState, formData) => {
-    const users = await getUsers();
-    console.log("Register action called.....");
-    console.log("Users...", users);
+    const name = formData.get("name")?.trim();
+    const email = formData.get("email")?.trim().toLowerCase();
+    const password = formData.get("password");
+    
+    console.log("name: ", name);
+    console.log("email: ", email);
+    console.log("password: ", password);
+
+    if (!name || !email || !password) {
+        return {
+            error: "All fields are required.",
+        };
+    }
 
     const newUser = {
-        name: formData.get("name"),
-        email: formData.get("email"),
-        password: formData.get("password"),
+        name,
+        email,
+        password,
         role: "User",
         avatar: "",
         phone: null,
@@ -93,71 +93,94 @@ export const registerAction = async (prevState, formData) => {
             city: "",
             state: "",
             pincode: "",
-            country: ""
+            country: "",
         },
-        createdAt: new Date().toLocaleDateString("en-GB")
-    }
-    console.log("new User: ", newUser);
-
-    const existingUser = users.find((user) => user.email === formData.get("email"));
-    console.log("Existing user: ", existingUser);
-
-    if(existingUser) {
-        return {
-            error: "Your email id is already registerdd!"      
-        }
-    }
+        createdAt: new Date().toISOString().slice(0, 10),
+    };
+    console.log("New user: ", newUser);
 
     try {
+        const existingUser = await pool.query(
+            "SELECT id FROM users WHERE email = $1 LIMIT 1",
+            [email]
+        );
+
+        if (existingUser.rows.length > 0) {
+            return {
+                error: "Your email ID is already registered!",
+            };
+        }
+
         await createUser(newUser);
+
     } catch (error) {
-        // if(error.response?.status === 404) {
+        console.error("Register error:", error.message);
+
+        // if (error.code === "23505") {
         //     return {
-        //         error: "Your email id is already registerdd!"
-        //     }      
+        //         error: "Your email ID is already registered!",
+        //     };
         // }
-        // console.log("Register error: ", error.message);
-        
-        // return {
-        //     error: "Something went wrong. Please try again."
-        // }
+
+        return {
+            error: "Something went wrong. Please try again.",
+        };
     }
+
     redirect("/login");
-}
+};
 
 // update user action
 export const updateUserAction = async (formData) => {
     const session = await getSession();
-    const user = session ? await getUserById(session.id) : "";
-    console.log("Update user action is called.....");
 
-    const updatedUser = {
-        id: session?.id,
-        name: formData.get("name"),
-        email: user.email,
-        password: user.password,
-        role: "User",
-        avatar: formData.get("avatar"),
-        phone: formData.get("phone"),
-        address: {
-            street: formData.get("street"),
-            city: formData.get("city"),
-            state: formData.get("state"),
-            pincode: formData.get("pincode"),
-            country: formData.get("country")
-        },
-        createdAt: user.createdAt
+    if (!session?.id) {
+        redirect("/login");
     }
-    console.log("Updated User: ", updatedUser);
 
     try {
-        await updateUser(session?.id, updatedUser)
+        const user = await getUserById(session.id);
+        console.log("login user: ", user);
+
+        if (!user) {
+            return {
+                error: "User not found."
+            };
+        }
+
+        const updatedUser = {
+            name: formData.get("name")?.trim(),
+            email: user.email,
+            role: user.role,
+            avatar: formData.get("avatar"),
+            phone: formData.get("phone"),
+            address: {
+                street: formData.get("street"),
+                city: formData.get("city"),
+                state: formData.get("state"),
+                pincode: formData.get("pincode"),
+                country: formData.get("country")
+            }
+        };
+
+        console.log("Updated User:", {
+            id: session.id,
+            name: updatedUser.name,
+            email: updatedUser.email
+        });
+
+        await updateUser(session.id, updatedUser);
+
     } catch (error) {
-        console.log("Error: ", error);
-        throw new error;
+        console.error("Update user action error:", error.message);
+
+        return {
+            error: "Unable to update profile. Please try again."
+        };
     }
+
     redirect("/");
-}
+};
 
 
 // carts action

@@ -3,7 +3,7 @@ import React from 'react'
 import Navbar from '../../components/navbar/Navbar';
 import Footer from "../../components/footer/Footer"
 import Link from 'next/link';
-import { deleteSession, getSession } from '../../_lib/session';
+import { getSession } from '../../_lib/session';
 import { getCategories } from '../../api/categories';
 import { getUserById } from '../../api/users';
 import CategoryPage from '../../components/categoryRouter/CategoryPage';
